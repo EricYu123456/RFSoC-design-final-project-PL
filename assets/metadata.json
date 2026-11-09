@@ -1,0 +1,9 @@
+{
+  "source": "deterministic grayscale test pattern",
+  "width": 640,
+  "height": 480,
+  "bytes": 307200,
+  "packets": 300,
+  "payload_bytes": 1024,
+  "pixel_crc32": "3862851B"
+}
