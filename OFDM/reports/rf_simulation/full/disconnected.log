@@ -1,0 +1,17 @@
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Nov  9 19:28:01 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/rf_3_0/xsim_script.tcl
+# xsim {rf_3_0} -testplusarg OUTPUT=disconnected.raw -testplusarg DISCONNECTED=1 -autoloadwcfg -runall -onfinish quit -onerror quit
+Time resolution is 1 ps
+run -all
+RF_SIM_PASS disconnected=1 sink_writes=0 retries=10 cycles=1828593
+$finish called at time : 11904140430 ps : File "sim/tb_rf_board.sv" Line 186
+exit 0
+INFO: [Common 17-206] Exiting xsim at Mon Nov  9 19:28:09 2026...

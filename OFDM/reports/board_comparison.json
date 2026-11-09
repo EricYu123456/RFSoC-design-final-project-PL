@@ -1,0 +1,66 @@
+{
+  "board": "RFSoC4x2",
+  "source_sha256": "2533101afb33c047a622088cbb9cca1c7d3750baa165f3fb88c6a3e1b266a50e",
+  "bytes_per_trial": 307200,
+  "amplitude": 4096,
+  "carrier_mhz": 500,
+  "trials": {
+    "OOK": [
+      {
+        "label": "1_OOK",
+        "elapsed_seconds": 1.0808282340003643,
+        "retransmissions": 0,
+        "payload_mbit_s": 2.2738118071767284
+      },
+      {
+        "label": "2_OOK",
+        "elapsed_seconds": 1.0808282340003643,
+        "retransmissions": 0,
+        "payload_mbit_s": 2.2738118071767284
+      },
+      {
+        "label": "3_OOK",
+        "elapsed_seconds": 1.0807693440001458,
+        "retransmissions": 0,
+        "payload_mbit_s": 2.2739357048229416
+      }
+    ],
+    "OFDM": [
+      {
+        "label": "1_OFDM",
+        "elapsed_seconds": 0.21494538499973714,
+        "retransmissions": 0,
+        "payload_mbit_s": 11.43360207525742
+      },
+      {
+        "label": "2_OFDM",
+        "elapsed_seconds": 0.21020580399999744,
+        "retransmissions": 0,
+        "payload_mbit_s": 11.691399348802138
+      },
+      {
+        "label": "3_OFDM",
+        "elapsed_seconds": 0.21497379399988858,
+        "retransmissions": 0,
+        "payload_mbit_s": 11.43209111339996
+      }
+    ]
+  },
+  "median_elapsed_seconds": {
+    "OOK": 1.0808282340003643,
+    "OFDM": 0.21494538499973714
+  },
+  "payload_mbit_s": {
+    "OOK": 2.2738118071767284,
+    "OFDM": 11.43360207525742
+  },
+  "throughput_ratio": 5.028385391952872,
+  "throughput_increase_percent": 402.8385391952872,
+  "transfer_time_reduction_percent": 80.11290062212932,
+  "test_date": "2026-11-09",
+  "path": "DAC_A -> ADC_A",
+  "trials_per_phy": 3,
+  "clock_mhz": 153.6,
+  "mismatched_bytes_per_trial": 0,
+  "measurement": "Board runner image_transfer phase, includes ACK; excludes setup and image verification."
+}

@@ -1,0 +1,17 @@
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Mon Nov  9 19:30:41 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/rf_host/xsim_script.tcl
+# xsim {rf_host} -autoloadwcfg -runall -onfinish quit -onerror quit
+Time resolution is 1 ps
+run -all
+RF_HOST_SIM_PASS: cold boot, command echo, stopped RF clock, reset and recovery
+$finish called at time : 2980 ns : File "sim/tb_rf_host.sv" Line 74
+exit 0
+INFO: [Common 17-206] Exiting xsim at Mon Nov  9 19:30:43 2026...
