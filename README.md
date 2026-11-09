@@ -1,6 +1,17 @@
-# 第一週：OOK 圖片收發與重傳模擬
+# RFSoC 4x2 OOK 圖片收發
 
-**RFSoC 4x2 實體 RF 上板版**：新增 DAC_A → ADC_A 的 RFDC 收發、前導碼與接收同步、PS 圖片記憶體，以及 PYNQ 執行程式。使用方式見 [實體 RF 上板說明](docs/rfsoc4x2_rf_bringup.md)。重新建置執行 `python scripts/build_rf.py`；上板檔案在 `board/output/`。下文為原有 100 MHz 理想通道模擬。
+## 使用 Notebook 上板
+
+1. 下載 [RFSoC 4x2 上板 ZIP](board/ook_rf_rfsoc4x2.zip)，將整包解壓到板上的同一個 Jupyter 資料夾。包內包含 Notebook、Python、bitstream、HWH、`manifest.json` 和測試圖。
+2. 用同軸線將 **DAC_A（DAC0）接到 ADC_A（ADC0）**，初次測試串接 10 dB 衰減器。
+3. 在板上的 PYNQ JupyterLab 開啟 `run_on_board.ipynb`，從第一格開始逐格執行。Notebook 會核對檔案、設定時脈、下載 Overlay 並檢查 PS 與 RFDC，再校正 RF 幅度、收發圖片和顯示對照結果。
+4. 在 `received/result.json` 查看實體收發結果。`passed: true` 且 `mismatched_bytes: 0` 表示接收圖和原圖逐位元組相同。
+
+目前上板包的介面版本為 `ps_clock_v2`。接線、執行階段與錯誤排查請見 [RFSoC 4x2 上板說明](docs/rfsoc4x2_rf_bringup.md)。
+
+需要重建硬體時，在專案根目錄執行 `python scripts/build_rf.py`。建置後的 Vivado 專案位於 `build/rf/vivado/ook_rf.xpr`。
+
+## 第一週理想通道模擬
 
 這個專案使用 **Vivado / XSim 2024.2**，模擬一張 640×480、8-bit 灰階圖片的收發。圖片資料與 ACK 都會通過 OOK 調變、理想通道、OOK 解調，再進行 CRC 檢查。
 
@@ -12,12 +23,10 @@
 
 ## 1. 如何開始
 
-已使用這台電腦的 `C:\Xilinx\Vivado\2024.2`。Python 需要 Pillow 與 matplotlib；目前環境已具備這兩個套件。若換到其他電腦，可以執行 `python -m pip install -r requirements.txt`。
-
-先在 PowerShell 進入專案目錄：
+使用 Vivado / XSim 2024.2。在 PowerShell 進入專案根目錄並安裝 Python 相依套件。
 
 ```powershell
-Set-Location 'C:\nycu\M1_1st\RFSoC\final_project'
+python -m pip install -r requirements.txt
 ```
 
 ### 快速檢查整套功能
@@ -111,10 +120,10 @@ RX：產生 ACK + CRC → OOK → TX 解調 ACK → 決定下一包或重傳
 python scripts/run.py --case mixed --packets 4 --waves
 ```
 
-`reports/mixed_4/waves.wdb` 會記錄主要訊號。開啟 Vivado 後，在 Tcl Console 輸入以下命令，即可載入已記錄的波形與主要訊號：
+`reports/mixed_4/waves.wdb` 會記錄主要訊號。將下列範例路徑換成你本機的專案路徑，再到 Vivado 的 Tcl Console 執行。
 
 ```tcl
-source {C:/nycu/M1_1st/RFSoC/final_project/scripts/open_waves.tcl}
+source {C:/path/to/OOK/scripts/open_waves.tcl}
 ```
 
 這個測試包含四種錯誤，適合展示重傳流程。
@@ -177,7 +186,7 @@ source {C:/nycu/M1_1st/RFSoC/final_project/scripts/open_waves.tcl}
 python scripts/run.py --case baseline --packets 3 --synth
 ```
 
-報告在 `reports/synthesis/`，包含 LUT、FF、DSP、BRAM 使用量與合成階段的時序資訊。這是可綜合性與資源檢查，尚未完成實體板卡的 pin 約束或佈局繞線。
+`reports/synthesis/` 記錄第一週理想通道設計的合成時序，以及 LUT、FF、DSP 和 BRAM 使用量。RFSoC 4x2 上板版的布線後時序報告收在上板 ZIP 的 `verification/`。
 
 修改 IP 設定或需要重建專案時，使用 `--rebuild`。一般執行會重新檢查編譯；`--skip-build` 僅供 RTL 與 testbench 都沒變更時使用。
 
