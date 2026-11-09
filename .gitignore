@@ -1,5 +1,8 @@
-/build/
-/.Xil/
+/OOK/build/
+/OOK/.Xil/
+/OFDM/build/
+/OFDM/.Xil/
+/OFDM/board/output/
 *.jou
 *.log
 *.str
