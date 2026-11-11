@@ -1,0 +1,18 @@
+
+****** xsim v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Wed Nov 11 16:00:27 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/rf_baseline/xsim_script.tcl
+# xsim {rf_baseline} -testplusarg OUTPUT=missing_final_payload.raw -testplusarg DATA_FAULT=3 -testplusarg FAULT_PACKET=2 -autoloadwcfg -runall -onfinish quit -onerror quit
+Time resolution is 1 fs
+run -all
+RF_SIM_PASS packets=3 bytes=3072 retries=10 exhausted=1 duplicates=0 ack_crc_errors=0 crc_bad_packets=0 missing_packets=1 mismatched_bytes=1021 dropped_beats=0 corrupted_beats=0 cycles=2211396
+$finish called at time : 14397107900736 fs : File "D:/NYCU/M1st_1/RFSoC_design/final project/OFDM_two_board/sim/tb_rf_board.sv" Line 348
+exit 0
+INFO: xsimkernel Simulation Memory Usage: 31732 KB (Peak: 31732 KB), Simulation CPU Usage: 16921 ms
+INFO: [Common 17-206] Exiting xsim at Wed Nov 11 16:00:45 2026...
