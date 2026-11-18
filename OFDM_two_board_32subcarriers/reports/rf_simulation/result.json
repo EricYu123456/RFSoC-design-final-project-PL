@@ -1,0 +1,609 @@
+{
+  "passed": true,
+  "profile": "full",
+  "physical_board_tested": false,
+  "topology": "two_rf_endpoints_two_cables",
+  "simulator": "Vivado XSim 2024.2",
+  "source_files": {
+    "board/rtl/ofdm_fft64.v": "27ef860aadb62eb1414708804974c06a75091fec53a457d1e169d280b883a7dd",
+    "board/rtl/ofdm_rf_board.v": "8088a4c386f7a834c2b1ff59ccc7a68db5dab1dbbdaa4092021150ff23cd33ab",
+    "board/rtl/ofdm_rf_host.v": "5a21764cffa7c7289a283dd2c6b0a48ebff4c5460915f3c41b1bf57ef6e598f9",
+    "board/rtl/ofdm_rx.v": "ddca7e4b52079c3327c90801774024f11f7d29d661edc9ea0522a42e99f94e3d",
+    "board/rtl/ofdm_tx.v": "57ebdba56c5153381a30461ac4797d306c9123264809f75382982187e7e35cba",
+    "board/rtl/rf_image_link.v": "d1c1419200249b733b02e107dce7034028de835de3ce1d3bcdc398f1fee1edbe",
+    "rtl/crc32_functions.vh": "34f5818671912928ed890d58de446908929fa4dd95eb0ad64597535416847221",
+    "rtl/image_receiver.v": "2832f723e630d69767b89593db2bcd5136e37187adb506096873d0c68d0dbc9a",
+    "rtl/image_sender.v": "b7c1cd82e5e5f17a569ab940364e5159a11f3811c8cd13f3035fdbaa8f691270",
+    "rtl/ofdm_phy.vh": "281690a09ff70703fb55b9fc338278937c03e9a969f195cdd5787cafe93da46b",
+    "rtl/packet_rx.v": "26d1193e261bf9d15aca18534303d60f6da08efca494dd5a31d563355de37210",
+    "sim/tb_rf_board.sv": "66ae65b996326bcf17c517fda11dd6ac0728e23682a95ad563559c6d54ec627a",
+    "sim/rf_iq_channel.sv": "d78fb089d83e600445fa4ea4972f3542e6b8def51d12dcffd2178cea697489ee",
+    "sim/tb_rf_host.sv": "1b2449bf6496a6b3dc0dcf7abe5a810d4a8287a043ea1c53f1148ebee92b2623",
+    "assets/image.raw": "2533101afb33c047a622088cbb9cca1c7d3750baa165f3fb88c6a3e1b266a50e",
+    "scripts/test_rf.py": "e8a3cd9790fbd1c2a41f5eb8caac23a7bcd980e609469258a39cfd309bc33978"
+  },
+  "tests": {
+    "baseline": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/baseline.log",
+      "wall_seconds": 8.344,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 0,
+      "exhausted": 0,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 405929,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/baseline.raw"
+    },
+    "ack_drop": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/ack_drop.log",
+      "wall_seconds": 10.156,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "drop_ack": 1,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 1,
+      "exhausted": 0,
+      "duplicates": 1,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 2112,
+      "corrupted_beats": 0,
+      "cycles": 596205,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/ack_drop.raw"
+    },
+    "ack_corrupt": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/ack_corrupt.log",
+      "wall_seconds": 10.422,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "corrupt_ack": 1,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 1,
+      "exhausted": 0,
+      "duplicates": 1,
+      "ack_crc_errors": 1,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 0,
+      "corrupted_beats": 640,
+      "cycles": 596205,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/ack_corrupt.raw"
+    },
+    "disconnected": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/disconnected.log",
+      "wall_seconds": 59.437,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "disconnected": 1,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 30,
+      "exhausted": 3,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 3,
+      "mismatched_bytes": 3057,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 6355694,
+      "byte_for_byte": false,
+      "matched_expected_image": true,
+      "sha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+      "received_file": "reports/rf_simulation/full/disconnected.raw"
+    },
+    "bad_payload_exhausted": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/bad_payload_exhausted.log",
+      "wall_seconds": 28.86,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "data_fault": 1,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 10,
+      "exhausted": 1,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 1,
+      "missing_packets": 0,
+      "mismatched_bytes": 8,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 2389184,
+      "byte_for_byte": false,
+      "matched_expected_image": true,
+      "sha256": "40c4254b3f4c8df58ec10fd221385ebaf2ff08b5f71579b58b6258900da15a70",
+      "received_file": "reports/rf_simulation/full/bad_payload_exhausted.raw"
+    },
+    "bad_payload_repaired": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/bad_payload_repaired.log",
+      "wall_seconds": 10.734,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "data_fault": 2,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 1,
+      "exhausted": 0,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 598254,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/bad_payload_repaired.raw"
+    },
+    "missing_payload": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/missing_payload.log",
+      "wall_seconds": 26.625,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "data_fault": 3,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 10,
+      "exhausted": 1,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 1,
+      "mismatched_bytes": 1018,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 2389184,
+      "byte_for_byte": false,
+      "matched_expected_image": true,
+      "sha256": "4d5ccd645860af0dda5cae29cbcd113a23ba7cb7ea94243a2194b616ceb66071",
+      "received_file": "reports/rf_simulation/full/missing_payload.raw"
+    },
+    "missing_final_payload": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/missing_final_payload.log",
+      "wall_seconds": 26.219,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "data_fault": 3,
+      "fault_packet": 2,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 10,
+      "exhausted": 1,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 1,
+      "mismatched_bytes": 1021,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 2389184,
+      "byte_for_byte": false,
+      "matched_expected_image": true,
+      "sha256": "6d8d6c99b9cbe2a1a46ad57e0bde361860c60ca41178b71620f3a49f86edb760",
+      "received_file": "reports/rf_simulation/full/missing_final_payload.raw"
+    },
+    "bad_header": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/bad_header.log",
+      "wall_seconds": 30.75,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "data_fault": 4,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 10,
+      "exhausted": 1,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 1,
+      "mismatched_bytes": 1018,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 2389184,
+      "byte_for_byte": false,
+      "matched_expected_image": true,
+      "sha256": "4d5ccd645860af0dda5cae29cbcd113a23ba7cb7ea94243a2194b616ceb66071",
+      "received_file": "reports/rf_simulation/full/bad_header.raw"
+    },
+    "all_acks_lost_for_packet": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/all_acks_lost_for_packet.log",
+      "wall_seconds": 30.109,
+      "channel": {
+        "data_delay_clocks": 37,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 0,
+        "complex_gain_numerator": [
+          -5,
+          3
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 0,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "block_ack_packet": 1,
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 10,
+      "exhausted": 1,
+      "duplicates": 10,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 23232,
+      "corrupted_beats": 0,
+      "cycles": 2389184,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/all_acks_lost_for_packet.raw"
+    },
+    "echo": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/echo.log",
+      "wall_seconds": 8.906,
+      "channel": {
+        "data_delay_clocks": 113,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 0,
+        "ack_cfo_hz": 0,
+        "receiver_clock_skew_ppm": 0,
+        "additional_iq_sample_delay": 1,
+        "complex_gain_numerator": [
+          3,
+          -7
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 1,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 0,
+      "exhausted": 0,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 406157,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/echo.raw"
+    },
+    "clock_reverse": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/clock_reverse.log",
+      "wall_seconds": 9.156,
+      "channel": {
+        "data_delay_clocks": 113,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": -10000,
+        "ack_cfo_hz": 10000,
+        "receiver_clock_skew_ppm": -20,
+        "additional_iq_sample_delay": 1,
+        "complex_gain_numerator": [
+          3,
+          -7
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 1,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 0,
+      "exhausted": 0,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 406165,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/clock_reverse.raw"
+    },
+    "clock_forward": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/clock_forward.log",
+      "wall_seconds": 8.953,
+      "channel": {
+        "data_delay_clocks": 113,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 10000,
+        "ack_cfo_hz": -10000,
+        "receiver_clock_skew_ppm": 20,
+        "additional_iq_sample_delay": 1,
+        "complex_gain_numerator": [
+          3,
+          -7
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 1,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "packets": 3,
+      "bytes": 3072,
+      "retries": 0,
+      "exhausted": 0,
+      "duplicates": 0,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 0,
+      "corrupted_beats": 0,
+      "cycles": 406149,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "d4c9f53a405d3d995fe347a1151eb538438ecdbb5638b27e921e02cb4ccdc239",
+      "received_file": "reports/rf_simulation/full/clock_forward.raw"
+    },
+    "full_image": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/full_image.log",
+      "wall_seconds": 477.187,
+      "channel": {
+        "data_delay_clocks": 113,
+        "ack_delay_clocks": 51,
+        "data_cfo_hz": 10000,
+        "ack_cfo_hz": -10000,
+        "receiver_clock_skew_ppm": 20,
+        "additional_iq_sample_delay": 1,
+        "complex_gain_numerator": [
+          3,
+          -7
+        ],
+        "gain_denominator": 16,
+        "echo_numerator": 1,
+        "echo_delay_clocks": 8,
+        "noise_range_adc_counts": [
+          -3,
+          4
+        ]
+      },
+      "drop_ack": 300,
+      "packets": 300,
+      "bytes": 307200,
+      "retries": 1,
+      "exhausted": 0,
+      "duplicates": 1,
+      "ack_crc_errors": 0,
+      "crc_bad_packets": 0,
+      "missing_packets": 0,
+      "mismatched_bytes": 0,
+      "dropped_beats": 2112,
+      "corrupted_beats": 0,
+      "cycles": 40830862,
+      "byte_for_byte": true,
+      "matched_expected_image": true,
+      "sha256": "2533101afb33c047a622088cbb9cca1c7d3750baa165f3fb88c6a3e1b266a50e",
+      "received_file": "reports/rf_simulation/full/full_image.raw"
+    },
+    "host": {
+      "passed": true,
+      "log": "reports/rf_simulation/full/host.log",
+      "checked": [
+        "cold boot without RF clock",
+        "coherent status",
+        "command echo",
+        "stopped RF clock",
+        "reset and recovery"
+      ]
+    }
+  }
+}

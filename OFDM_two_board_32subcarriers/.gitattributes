@@ -1,0 +1,2 @@
+# Keep exact file bytes for the simulation and release SHA-256 checks.
+* -text
