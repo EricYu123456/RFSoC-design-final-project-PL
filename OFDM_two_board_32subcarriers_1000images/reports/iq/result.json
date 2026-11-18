@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "input_sha256": [
+    "826d596c1c9ab7d4d8114949b65b8cf9a632287d64629d200ab724d15915399a",
+    "98acd92c3790581b282adcc558b5f0516b2395b8f0a041b6a99c39d2f2eacff3"
+  ],
+  "tests": {
+    "full_frames": "AIR_PASS frames=2 packets=300 cycles=79357143 polls=82 data=605",
+    "window4": "AIR_PASS frames=2 packets=12 cycles=3232738 polls=6 data=24",
+    "window1": "AIR_PASS frames=2 packets=12 cycles=3467080 polls=24 data=24",
+    "qpsk_ack": "AIR_PASS frames=2 packets=12 cycles=3402828 polls=6 data=25",
+    "reverse": "AIR_PASS frames=2 packets=12 cycles=3419537 polls=6 data=25",
+    "fading": "AIR_PASS frames=2 packets=12 cycles=3419530 polls=6 data=25",
+    "clean": "AIR_PASS frames=2 packets=12 cycles=3206700 polls=4 data=24",
+    "host": {
+      "passed": true,
+      "log": "reports/iq/host.log",
+      "checked": [
+        "cold boot without RF clock",
+        "coherent status",
+        "command echo",
+        "stopped RF clock",
+        "reset and recovery"
+      ]
+    }
+  },
+  "source_files": {
+    "board/rtl/air_modem.v": "57271ebf15d45c372f354263986ccc1ac9a265137f1052787f0b43a2e6ff70ba",
+    "board/rtl/ofdm_fft64.v": "27ef860aadb62eb1414708804974c06a75091fec53a457d1e169d280b883a7dd",
+    "board/rtl/ofdm_rf_board.v": "7f5fc8a97f2765bbfead0bbdeeabf854ced4cdd89dc96cbb5772e12e7eff9bd7",
+    "board/rtl/ofdm_rf_host.v": "5a21764cffa7c7289a283dd2c6b0a48ebff4c5460915f3c41b1bf57ef6e598f9",
+    "board/rtl/ofdm_rx.v": "9948dd01007dc7642f100fce421ce891f343c3846cc9173f2fbdb7ce22120794",
+    "board/rtl/ofdm_tx.v": "728df0b32ea0030c69fbf81e4031e0c54238cd598bef524e513e14f824b4ee74",
+    "rtl/air_codec.v": "1584079a9a6cbd88d4d2dbf95eec7c56251d4dc378f5ef975a77fa74b6b867c4",
+    "rtl/air_link.v": "9059094801cfc70e8c165efe02840eb5374df182a72c1f43b4a35783b303f804",
+    "rtl/air_protocol.vh": "17eedabdc5f1c3897fa2fce3720073abd0e6e7dafba1d238246edc4555b6909b",
+    "rtl/crc32_functions.vh": "34f5818671912928ed890d58de446908929fa4dd95eb0ad64597535416847221",
+    "rtl/ofdm_phy.vh": "281690a09ff70703fb55b9fc338278937c03e9a969f195cdd5787cafe93da46b",
+    "sim/tb_rf_board.sv": "bdd6502ea579064e489a8f2601829c76461d1a245d250fc9faa66faab6355aba",
+    "sim/rf_iq_channel.sv": "5441d095032ba030077628c64462d44bd00b2ffa46905e85ec05790ce76bebb4",
+    "sim/tb_rf_host.sv": "1b2449bf6496a6b3dc0dcf7abe5a810d4a8287a043ea1c53f1148ebee92b2623",
+    "assets/image.raw": "2533101afb33c047a622088cbb9cca1c7d3750baa165f3fb88c6a3e1b266a50e",
+    "scripts/test_rf.py": "0dfd255a2e6f8ef8eef6b54be4253f0940759c967d154028e60d9f459c7efa00",
+    "scripts/test_iq.py": "d1d61c0430371d339d179c093c9d579e822cdb24c306a547fb336cb92e026353"
+  }
+}

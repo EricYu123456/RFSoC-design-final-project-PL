@@ -1,0 +1,5 @@
+/build/
+/.Xil/
+/board/output/
+/reports/batch/received_png/
+/received/

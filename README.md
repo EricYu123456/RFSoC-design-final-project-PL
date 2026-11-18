@@ -7,12 +7,16 @@
 | [OOK/](OOK/) | OOK，毛速率 2.4 Mbit/s | [OOK README](OOK/README.md) | [OOK ZIP](OOK/board/ook_rf_rfsoc4x2.zip) |
 | [OFDM/](OFDM/) | 8 點 OFDM、4 個 QPSK 子載波、4 樣本 CP，毛速率 12.8 Mbit/s | [OFDM README](OFDM/README.md) | [OFDM ZIP](OFDM/board/ofdm_rf_rfsoc4x2.zip) |
 
-上表兩個版本使用單板同軸迴路。雙板版本使用兩條同軸線分別傳送圖片和回覆 ACK，兩塊板須使用同一版本的上板包。
+上表兩個版本使用單板同軸迴路。下表的雙板版本使用兩條同軸線分別傳送圖片和回覆 ACK，兩塊板須使用同一版本的上板包。
 
 | 雙板版本 | 調變 | 使用說明 | 上板包 |
 | --- | --- | --- | --- |
 | [OFDM_two_board/](OFDM_two_board/) | 8 點 OFDM、4 個 QPSK 子載波、4 樣本 CP | [操作指南](OFDM_two_board/docs/rfsoc4x2_rf_bringup.md) | [上板 ZIP](OFDM_two_board/board/ofdm_two_board_rfsoc4x2.zip) |
 | [OFDM_two_board_32subcarriers/](OFDM_two_board_32subcarriers/) | 64 點 OFDM、32 個 QPSK 子載波、16 樣本 CP | [操作指南](OFDM_two_board_32subcarriers/docs/rfsoc4x2_rf_bringup.md) | [上板 ZIP](OFDM_two_board_32subcarriers/board/ofdm_two_board_32subcarriers_rfsoc4x2.zip) |
+
+## 雙板天線傳輸
+
+[OFDM_two_board_32subcarriers_1000images/](OFDM_two_board_32subcarriers_1000images/) 使用四根天線、500 MHz 同頻分時，最多每 8 個資料包回一次區塊 ACK。RTL 模擬已逐位元組驗證 1,000 張灰階圖，實體天線收發待測。[操作指南](OFDM_two_board_32subcarriers_1000images/docs/rfsoc4x2_rf_bringup.md) · [下載上板包（Git LFS）](https://github.com/EricYu123456/RFSoC-design-final-project-PL/raw/refs/heads/main/OFDM_two_board_32subcarriers_1000images/board/ofdm_air8_rfsoc4x2.zip)
 
 ## 單板上板實測
 
