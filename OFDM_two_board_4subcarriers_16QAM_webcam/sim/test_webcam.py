@@ -15,7 +15,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import webcam_live as live
-from webcam_stream import pack_block, unpack_block
+from webcam_stream import block_extent, pack_block, unpack_block
 
 
 def check_descriptor_rollover():
@@ -42,15 +42,74 @@ def check_descriptor_rollover():
         epoch, index = divmod(number, live.BATCH_SIZE)
         assert tuple(radio.descriptor) == ((stream + epoch) & 0xffffffff, (65535 << 16) | index)
         radio.quality[:] = 0x02020202
-        assert radio.receive(number, stream, threading.Event()) == (stream, block)
+        assert radio.receive(number, stream, threading.Event()) == (stream, block[:block_extent(block)])
         assert not radio.quality.any()
     assert controls == [board.base_control | live.RESET, board.base_control]
     radio.quality.fill(0)
     assert radio.receive(live.BATCH_SIZE, stream, threading.Event()) == (stream, None)
+    # An invalid length must release the slot without reading outside BRAM.
+    radio.quality.fill(0x02020202)
+    radio.payload[7] = 0xffffffff
+    assert radio.receive(live.BATCH_SIZE, stream, threading.Event()) == (stream, None)
+    assert not radio.quality.any()
+    # Old JPEG bytes must never leak into a later, shorter over-the-air block.
+    for length in (79, 1021, 23, 24, 25, 2000, 0):
+        block = pack_block(stream, 0, 12, [(1, 0.0, bytes([0xa5]) * length)] if length else [])
+        sender.upload(stream, 0, block)
+        assert sender.payload.tobytes() == block
+        compact = block[:block_extent(block)]
+        assert unpack_block(compact) == unpack_block(block)
+        try:
+            unpack_block(compact[:-1])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("Truncated compact block accepted")
+
+
+def check_recording_pipeline():
+    # Hold the writer on frame 0 until the RX thread has published frame 1.
+    from webcam_latency import StageTimes
+    stop, second_preview = threading.Event(), threading.Event()
+    recorded, seen = [], []
+    stream = 4
+    blocks = [pack_block(stream, i, 30, [(i, i/30, bytes([i]))]) for i in range(2)]
+    blocks.append(pack_block(stream, 2, 30, []))
+    radio = SimpleNamespace(timing=StageTimes(), receive=lambda n, _, stop: (stream, blocks[n]))
+    def append(fps, item):
+        assert second_preview.wait(2), "Preview blocked on MP4 writer"
+        recorded.append(item[0])
+    def preview(jpeg):
+        seen.append(jpeg)
+        if len(seen) == 2:
+            second_preview.set()
+    writer = SimpleNamespace(append=append, close=lambda: None, frames=2, slots=2, codec="mp4v")
+    def stats():
+        return dict(blocks=0, frames_received=0, blocks_rejected=0, end_of_stream=False)
+    with patch.object(live, "Recording", return_value=writer):
+        result = stats()
+        live.receive_video(radio, stop, result, preview, "unused")
+        assert result["end_of_stream"] and recorded == [0, 1]
+        assert seen == [bytes([0]), bytes([1])]
+        def disk_full(fps, item):
+            raise OSError("test disk full")
+        writer.append = disk_full
+        def wait_for_radio(n, _, event):
+            if n == 0:
+                return stream, blocks[0]
+            assert event.wait(2), "Recorder error did not wake the receiver"
+        radio.receive = wait_for_radio
+        try:
+            live.receive_video(radio, stop, stats(), lambda _: None, "unused")
+        except OSError as exc:
+            assert str(exc) == "test disk full"
+        else:
+            raise AssertionError("Recorder error was lost")
 
 
 def main():
     check_descriptor_rollover()
+    check_recording_pipeline()
     class LocalBoard:
         def __init__(self, role, bitfile, output, **kwargs):
             self.output = output
@@ -108,7 +167,17 @@ def main():
             raise errors[0]
         tx, rx = results["tx"], results["rx"]
         assert tx["end_of_stream"] and rx["end_of_stream"]
-        assert rx["frames_received"] == tx["frames_sent"] and rx["blocks_rejected"] == 0
+        def stages(stats):
+            report = json.loads(Path(stats["latency_report"]).read_text())
+            return {row["stage"]: row for row in report["stages"]}
+        tx_times, rx_times = stages(tx), stages(rx)
+        assert tx_times["tx_age"]["count"] == tx["frames_sent"]
+        assert rx_times["jpeg_decode"]["count"] == rx["frames_received"]
+        assert rx_times["mp4_write"]["count"] == rx["mp4_frames"]
+        assert rx_times["unpack"]["count"] == rx["blocks"] + 1  # includes EOS
+        assert 0 <= rx_times["jpeg_decode"]["p50_ms"] <= rx_times["jpeg_decode"]["p95_ms"]
+        assert rx["recorded_input_frames"] == rx["frames_received"] == tx["frames_sent"]
+        assert rx["blocks_rejected"] == 0
         cap = cv2.VideoCapture(rx["mp4"])
         count, levels = 0, set()
         try:

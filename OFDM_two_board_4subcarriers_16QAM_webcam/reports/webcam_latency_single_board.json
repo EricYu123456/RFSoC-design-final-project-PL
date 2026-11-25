@@ -1,0 +1,162 @@
+{
+  "method": "One RFSoC4x2, same 60 USB camera JPEGs replayed four times. PS-injected BRAM, 40 six-frame data blocks plus EOS. No RF peer or browser.",
+  "width": 640,
+  "height": 480,
+  "fps": 30,
+  "sample_pool_sha256": "24c501e7b6d2839577ebb85f73ae97e376542699ed11546917d5f8f5055aab56",
+  "old": {
+    "frames": 240,
+    "mp4_frames": 240,
+    "end_of_stream": true,
+    "rejected": 0,
+    "mp4_bytes": 1994380,
+    "mean_slot_used_pct": 47.19583333333333,
+    "codec": "mp4v",
+    "metrics": {
+      "upload": {
+        "count": 41,
+        "mean_ms": 1.276,
+        "p95_ms": 1.318
+      },
+      "readback": {
+        "count": 1,
+        "mean_ms": 9.808,
+        "p95_ms": 9.808
+      },
+      "payload": {
+        "count": 41,
+        "mean_ms": 134.826,
+        "p95_ms": 135.568
+      },
+      "jpeg_decode": {
+        "count": 240,
+        "mean_ms": 3.487,
+        "p95_ms": 3.608
+      },
+      "mp4_write": {
+        "count": 240,
+        "mean_ms": 33.33,
+        "p95_ms": 52.67
+      },
+      "rx_service": {
+        "count": 40,
+        "mean_ms": 359.502,
+        "p95_ms": 420.872
+      }
+    }
+  },
+  "fast": {
+    "frames": 240,
+    "mp4_frames": 240,
+    "end_of_stream": true,
+    "rejected": 0,
+    "mp4_bytes": 5793957,
+    "mean_slot_used_pct": 47.19583333333333,
+    "codec": "mjpeg",
+    "metrics": {
+      "upload": {
+        "count": 41,
+        "mean_ms": 2.03,
+        "p95_ms": 2.1
+      },
+      "readback": {
+        "count": 1,
+        "mean_ms": 35.898,
+        "p95_ms": 35.898
+      },
+      "full_trial": {
+        "count": 41,
+        "mean_ms": 126.886,
+        "p95_ms": 128.978
+      },
+      "payload": {
+        "count": 41,
+        "mean_ms": 16.755,
+        "p95_ms": 18.436
+      },
+      "done_to_release": {
+        "count": 41,
+        "mean_ms": 17.377,
+        "p95_ms": 19.05
+      },
+      "rx_service": {
+        "count": 40,
+        "mean_ms": 18.295,
+        "p95_ms": 19.581
+      },
+      "record_queue_wait": {
+        "count": 40,
+        "mean_ms": 0.103,
+        "p95_ms": 0.107
+      },
+      "jpeg_decode": {
+        "count": 240,
+        "mean_ms": 17.139,
+        "p95_ms": 18.846
+      },
+      "mp4_write": {
+        "count": 240,
+        "mean_ms": 5.202,
+        "p95_ms": 5.972
+      }
+    }
+  },
+  "mp4v_background": {
+    "frames": 240,
+    "mp4_frames": 240,
+    "end_of_stream": true,
+    "rejected": 0,
+    "mp4_bytes": 1994380,
+    "mean_slot_used_pct": 47.19583333333333,
+    "codec": "mp4v",
+    "metrics": {
+      "upload": {
+        "count": 41,
+        "mean_ms": 2.063,
+        "p95_ms": 2.117
+      },
+      "readback": {
+        "count": 1,
+        "mean_ms": 35.922,
+        "p95_ms": 35.922
+      },
+      "full_trial": {
+        "count": 41,
+        "mean_ms": 127.822,
+        "p95_ms": 130.094
+      },
+      "payload": {
+        "count": 41,
+        "mean_ms": 16.91,
+        "p95_ms": 18.539
+      },
+      "done_to_release": {
+        "count": 41,
+        "mean_ms": 17.618,
+        "p95_ms": 19.256
+      },
+      "rx_service": {
+        "count": 40,
+        "mean_ms": 18.571,
+        "p95_ms": 19.81
+      },
+      "record_queue_wait": {
+        "count": 40,
+        "mean_ms": 66.913,
+        "p95_ms": 119.626
+      },
+      "jpeg_decode": {
+        "count": 240,
+        "mean_ms": 12.488,
+        "p95_ms": 18.785
+      },
+      "mp4_write": {
+        "count": 240,
+        "mean_ms": 36.155,
+        "p95_ms": 55.892
+      }
+    }
+  },
+  "mjpeg_packets_identical": 240,
+  "playback_frames_verified_per_run": 240
+}

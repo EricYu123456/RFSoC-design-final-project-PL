@@ -11,7 +11,8 @@ ARTIFACTS = ROOT / "build/hardware/artifacts"
 TIMING = ROOT / "reports/implementation_qam16/timing_summary_routed.rpt"
 NOTEBOOK = "RFSoC4x2_OFDM_Live_Webcam_MethodB.ipynb"
 HARDWARE = ["ofdm_qam16.bit", "ofdm_qam16.hwh"]
-SOFTWARE = [NOTEBOOK, "webcam_board.py", "webcam_live.py", "webcam_stream.py"]
+SOFTWARE = [NOTEBOOK, "webcam_board.py", "webcam_live.py", "webcam_stream.py",
+            "webcam_latency.py", "webcam_benchmark.py", "webcam_native.py", "webcam_native.c"]
 
 
 def digest(path):

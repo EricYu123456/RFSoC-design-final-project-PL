@@ -11,6 +11,8 @@ import cv2
 import numpy as np
 
 from webcam_board import FRAME_BYTES
+from webcam_native import JpegMovie, native_library
+from webcam_latency import StageTimes, perf_counter_ns
 
 WIDTH, HEIGHT = 640, 480
 MAX_FRAMES = 11
@@ -42,14 +44,22 @@ def pack_block(stream, number, fps, frames):
     return bytes(block)
 
 
-def unpack_block(block):
-    if len(block) != FRAME_BYTES:
-        raise ValueError("Incomplete BRAM slot")
-    magic, stream, number, fps, count, used = HEADER.unpack_from(block)
+def block_extent(header):
+    if len(header) < HEADER.size:
+        raise ValueError("Truncated video header")
+    magic, _, _, fps, count, used = HEADER.unpack_from(header)
     if (magic != MAGIC or not 0 < fps <= 120 or count > MAX_FRAMES
             or not HEADER.size <= used <= FRAME_BYTES - DIGEST_BYTES):
         raise ValueError("Invalid video header")
-    if hashlib.sha256(memoryview(block)[:used]).digest() != block[used:used + DIGEST_BYTES]:
+    return used + DIGEST_BYTES
+
+
+def unpack_block(block):
+    extent = block_extent(block)
+    if len(block) not in (extent, FRAME_BYTES):
+        raise ValueError("Incomplete video block")
+    _, stream, number, fps, count, used = HEADER.unpack_from(block)
+    if hashlib.sha256(memoryview(block)[:used]).digest() != block[used:extent]:
         raise ValueError("Video block SHA-256 mismatch")
     pos, frames = HEADER.size, []
     for _ in range(count):
@@ -84,9 +94,10 @@ def open_camera(source, fps):
 class Capture(threading.Thread):
     """One producer, a bounded JPEG queue, and an interruptible consumer."""
 
-    def __init__(self, source, fps, stop):
+    def __init__(self, source, fps, stop, timing=None):
         super().__init__(daemon=True)
         self.source, self.fps, self.stop = source, fps, stop
+        self.timing = timing or StageTimes()
         self.ready = deque(maxlen=MAX_BACKLOG)
         self.changed = threading.Condition()
         self.done = False
@@ -98,12 +109,14 @@ class Capture(threading.Thread):
         try:
             cap = open_camera(self.source, self.fps)
             file_source = not isinstance(self.source, int)
-            origin = next_frame = time.monotonic()
+            self.origin = next_frame = time.monotonic()
             quality = 85
             while not self.stop.is_set():
                 if file_source and self.stop.wait(max(0, next_frame - time.monotonic())):
                     break
+                started = perf_counter_ns()
                 ok, frame = cap.read()
+                self.timing.end("camera_read", started)
                 now = time.monotonic()
                 if not ok:
                     if file_source or self.stop.is_set():
@@ -112,9 +125,12 @@ class Capture(threading.Thread):
                 if now + 0.001 < next_frame:
                     continue
                 next_frame = max(next_frame + 1 / self.fps, now)
+                started = perf_counter_ns()
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) if frame.ndim == 3 else frame
                 if gray.shape != (HEIGHT, WIDTH):
                     gray = cv2.resize(gray, (WIDTH, HEIGHT), interpolation=cv2.INTER_AREA)
+                self.timing.end("gray_resize", started)
+                started = perf_counter_ns()
                 while True:
                     ok, buf = cv2.imencode(".jpg", gray, [cv2.IMWRITE_JPEG_QUALITY, quality])
                     if not ok:
@@ -122,7 +138,8 @@ class Capture(threading.Thread):
                     if buf.size <= JPEG_BUDGET or quality == 20:
                         break
                     quality = max(20, quality - 5)
-                item = (self.selected, now - origin, buf.tobytes())
+                item = (self.selected, now - self.origin, buf.tobytes())
+                self.timing.end("jpeg_encode", started)
                 self.selected += 1
                 if buf.size + HEADER.size + ENTRY.size + DIGEST_BYTES > FRAME_BYTES:
                     self.dropped += 1
@@ -132,7 +149,7 @@ class Capture(threading.Thread):
                 with self.changed:
                     if len(self.ready) == self.ready.maxlen:
                         self.dropped += 1
-                    self.ready.append(item)
+                    self.ready.append((item, perf_counter_ns()))
                     self.changed.notify()
         except Exception as exc:
             self.error = exc
@@ -148,10 +165,12 @@ class Capture(threading.Thread):
             self.changed.wait_for(lambda: self.ready or self.done or self.stop.is_set(), timeout=0.25)
             result, size = [], HEADER.size + DIGEST_BYTES
             while self.ready and len(result) < MAX_FRAMES:
-                added = ENTRY.size + len(self.ready[0][2])
+                added = ENTRY.size + len(self.ready[0][0][2])
                 if size + added > FRAME_BYTES:
                     break
-                result.append(self.ready.popleft())
+                entry, queued = self.ready.popleft()
+                self.timing.end("queue_age", queued)
+                result.append(entry)
                 size += added
             if not result and (self.done or self.stop.is_set()):
                 return None
@@ -161,7 +180,12 @@ class Capture(threading.Thread):
 class Recording:
     """Write B's decoded frames as they arrive, retaining one frame for timing."""
 
-    def __init__(self, filename):
+    def __init__(self, filename, timing=None, codec="auto"):
+        if codec not in ("auto", "mp4v"):
+            raise ValueError("recording codec must be auto or mp4v")
+        self.native = native_library() if codec == "auto" else None
+        self.codec = "mjpeg" if self.native is not None else "mp4v"
+        self.timing = timing or StageTimes()
         self.filename = Path(filename)
         self.writer = self.previous = self.origin = self.last_time = self.fps = None
         self.index = -1
@@ -171,31 +195,49 @@ class Recording:
         index, seconds, jpeg = entry
         if index <= self.index or (self.last_time is not None and seconds < self.last_time):
             raise ValueError("Out-of-order camera frame")
+        started = perf_counter_ns()
         gray = cv2.imdecode(np.frombuffer(jpeg, np.uint8), cv2.IMREAD_GRAYSCALE)
+        self.timing.end("jpeg_decode", started)
         if gray is None or gray.shape != (HEIGHT, WIDTH):
             raise ValueError("Invalid 640 x 480 JPEG")
         if self.writer is None:
-            self.writer = cv2.VideoWriter(str(self.filename), cv2.VideoWriter_fourcc(*"mp4v"),
-                                          fps, (WIDTH, HEIGHT), True)
-            if not self.writer.isOpened():
-                raise RuntimeError("OpenCV cannot open the mp4v writer on board B")
+            started = perf_counter_ns()
+            if self.native is not None:
+                self.writer = JpegMovie(self.native, self.filename, fps, WIDTH, HEIGHT)
+            else:
+                self.writer = cv2.VideoWriter(str(self.filename), cv2.VideoWriter_fourcc(*"mp4v"),
+                                              fps, (WIDTH, HEIGHT), True)
+                if not self.writer.isOpened():
+                    raise RuntimeError("OpenCV cannot open the mp4v writer on board B")
+            self.timing.end("writer_open", started)
             self.origin, self.fps = seconds, fps
         if self.fps != fps:
             raise ValueError("Camera frame rate changed within a stream")
         slot = round((seconds - self.origin) * fps)
         while self.slots < slot:
-            self.writer.write(self.previous)
-            self.slots += 1
-        self.previous = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
+            self._write_previous()
+        if self.native is not None:
+            self.previous = jpeg
+        else:
+            started = perf_counter_ns()
+            self.previous = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
+            self.timing.end("bgr", started)
         self.last_time, self.index = seconds, index
         self.frames += 1
+
+    def _write_previous(self):
+        started = perf_counter_ns()
+        self.writer.write(self.previous)
+        self.slots += 1
+        self.timing.end("mp4_write", started)
 
     def close(self):
         if self.writer is not None:
             try:
                 if self.previous is not None:
-                    self.writer.write(self.previous)
-                    self.slots += 1
+                    self._write_previous()
             finally:
+                started = perf_counter_ns()
                 self.writer.release()
+                self.timing.end("close", started)
                 self.writer = None
