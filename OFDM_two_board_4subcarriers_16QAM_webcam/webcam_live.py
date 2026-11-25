@@ -60,17 +60,25 @@ class Radio:
             stop.wait(0.002)
         else:
             return None
-        session, desc = (int(value) for value in self.descriptor.copy())
+        # ARM device mappings require aligned accesses. A vectorized NumPy
+        # copy of the 300-byte quality map raises SIGBUS on the RFSoC.
+        session, desc = int(self.descriptor[0]), int(self.descriptor[1])
         batch, index = divmod(number, BATCH_SIZE)
         if desc != (BATCH_SIZE << 16) | index or (
                 stream is not None and session != (stream + batch) & 0xffffffff):
             raise RuntimeError(f"Unexpected RX descriptor for block {number}: {session:#x}/{desc:#x}")
-        quality = self.quality.copy().view(np.uint8)
-        good = bool(np.all(quality == 2)) and state["unverified_packets"] == 0
-        block = self.payload.copy().tobytes() if good else None
+        good = state["unverified_packets"] == 0 and all(
+            int(self.quality[i]) == 0x02020202 for i in range(self.quality.size)
+        )
+        block = None
+        if good:
+            words = np.fromiter((self.payload[i] for i in range(self.payload.size)),
+                                dtype="<u4", count=self.payload.size)
+            block = words.tobytes()
         # Clear the quality map before releasing the slot. A stale '2' must
         # never validate a missing packet on the next block.
-        self.quality[:] = 0
+        for i in range(self.quality.size):
+            self.quality[i] = 0
         self.board.pulse_start()
         if index == BATCH_SIZE - 1:
             time.sleep(0.12)  # leave CLOSED replayable through A's last FIN retry
