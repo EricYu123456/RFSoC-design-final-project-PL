@@ -1,0 +1,62 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Nov 25 16:51:55 2026
+| Host         : LAPTOP-U9RNVGB3 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file X:/reports/implementation_qam16/methodology.rpt
+| Design       : rf_system_wrapper
+| Device       : xczu48dr-ffvg1517-2-e
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_rf_system_wrapper_physopt
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 4
++---------+----------+--------------------------------------------------------+--------+
+| Rule    | Severity | Description                                            | Checks |
++---------+----------+--------------------------------------------------------+--------+
+| XDCC-1  | Warning  | Scoped Clock constraint overwritten with the same name | 1      |
+| XDCC-7  | Warning  | Scoped Clock constraint overwritten on the same source | 1      |
+| CLKC-11 | Advisory | MMCME4 divide could be done by BUFG_GT                 | 1      |
+| CLKC-56 | Advisory | MMCME4 with global clock driver has no LOC             | 1      |
++---------+----------+--------------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+XDCC-1#1 Warning
+Scoped Clock constraint overwritten with the same name  
+A new clock constraint create_generated_clock overrides a previous scoped clock constraint with the same name. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_generated_clock -name rf_system_i/rf_clock/inst/clk_in1 -source [get_pins rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX] -divide_by 1 [get_pins rf_system_i/rf_clock/inst/clk_in1] (Source: Not Available)
+Previous: create_clock -period 3.255 [get_ports -scoped_to_current_instance clk_in1] (Source: X:/build/hardware/vivado/ofdm4.gen/sources_1/bd/rf_system/ip/rf_system_rf_clock_0/rf_system_rf_clock_0.xdc (Line: 53))
+Related violations: <none>
+
+XDCC-7#1 Warning
+Scoped Clock constraint overwritten on the same source  
+A new clock constraint create_generated_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
+New: create_generated_clock -name rf_system_i/rf_clock/inst/clk_in1 -source [get_pins rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX] -divide_by 1 [get_pins rf_system_i/rf_clock/inst/clk_in1] (Source: Not Available)
+Previous: create_clock -period 3.255 [get_ports -scoped_to_current_instance clk_in1] (Source: X:/build/hardware/vivado/ofdm4.gen/sources_1/bd/rf_system/ip/rf_system_rf_clock_0/rf_system_rf_clock_0.xdc (Line: 53))
+Related violations: <none>
+
+CLKC-11#1 Advisory
+MMCME4 divide could be done by BUFG_GT  
+The MMCME4 cell rf_system_i/rf_clock/inst/mmcme4_adv_inst driven by BUFG_GT cell rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt uses CLKOUT* output(s) with a DIVIDE value of [1..8] which could be accomplished using a BUFG_GT divide capability. Consider using BUFG_GT(s) to accomplish the desired divide(s).
+Related violations: <none>
+
+CLKC-56#1 Advisory
+MMCME4 with global clock driver has no LOC  
+The MMCME4_ADV cell rf_system_i/rf_clock/inst/mmcme4_adv_inst CLKIN1 or CLKIN2 pin is driven by global Clock buffer(s) rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt and does not have a LOC constraint. It is recommended to LOC the MMCM and use the CLOCK_DEDICATED_ROUTE constraint on the net(s) driven by the global Clock buffer(s).
+Related violations: <none>
+
+

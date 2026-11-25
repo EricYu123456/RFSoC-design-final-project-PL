@@ -1,0 +1,2 @@
+CONSTELLATION_PASS 16 points on each of four active bins; four inactive bins at zero
+sim/tb_constellation.sv:84: $finish called at 12762000 (1ps)

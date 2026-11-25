@@ -1,0 +1,35 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date              : Wed Nov 25 16:52:02 2026
+| Host              : LAPTOP-U9RNVGB3 running 64-bit major release  (build 9200)
+| Command           : report_clock_interaction -file X:/reports/implementation_qam16/clock_interaction.rpt
+| Design            : rf_system_wrapper
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                                                      WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock              
+From Clock                         To Clock                           Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints              
+---------------------------------  ---------------------------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  -----------------------  
+RFADC0_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFADC1_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFADC2_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFADC3_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFDAC0_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFDAC1_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFDAC2_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+RFDAC3_CLK                         clk_pl_0                                                                    0            8                   Ignored              False Path               
+clk_out1_rf_system_rf_clock_0_1    clk_out1_rf_system_rf_clock_0_1    rise - rise     0.89     0.00            0        13536             6.51  Clean                Timed                    
+clk_out1_rf_system_rf_clock_0_1    clk_pl_0                           rise - rise     5.92     0.00            0          134             6.51  Ignored              Max Delay Datapath Only  
+clk_pl_0                           clk_out1_rf_system_rf_clock_0_1    rise - rise    25.50     0.00            0           36            26.04  Ignored              Max Delay Datapath Only  
+clk_pl_0                           clk_pl_0                           rise - rise     1.30     0.00            0        73724            10.00  Clean                Partial False Path       
+
+

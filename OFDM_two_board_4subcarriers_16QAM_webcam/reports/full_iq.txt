@@ -1,0 +1,5 @@
+AIR_PASS frames=2 packets=300 cycles=39823801 polls=78 data=601
+- tb_rf_board.sv:154: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.050 2026-07-01
+- Verilator: $finish at 259ms; walltime 82.761 s; speed 3.133 ms/s
+- Verilator: cpu 0.000 s on 1 threads; allocated 6 MB

@@ -1,0 +1,11 @@
+{
+  "test": "local camera-file / simulated RF slots / actual OpenCV MP4",
+  "kernel_interrupt": true,
+  "remote_eos": true,
+  "frames_decoded": 150,
+  "descriptor_rollover": true,
+  "incomplete_slot_rejected": true,
+  "duration_seconds": 12.5,
+  "fps": 12.0,
+  "blocks_rejected": 0
+}

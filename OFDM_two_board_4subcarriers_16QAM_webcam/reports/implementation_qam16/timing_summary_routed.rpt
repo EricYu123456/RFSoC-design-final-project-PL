@@ -1,0 +1,2593 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date              : Wed Nov 25 16:51:58 2026
+| Host              : LAPTOP-U9RNVGB3 running 64-bit major release  (build 9200)
+| Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file X:/reports/implementation_qam16/timing_summary_routed.rpt
+| Design            : rf_system_wrapper
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : E
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule     Severity  Description                                             Violations  
+-------  --------  ------------------------------------------------------  ----------  
+XDCC-1   Warning   Scoped Clock constraint overwritten with the same name  1           
+XDCC-7   Warning   Scoped Clock constraint overwritten on the same source  1           
+CLKC-11  Advisory  MMCME4 divide could be done by BUFG_GT                  1           
+CLKC-56  Advisory  MMCME4 with global clock driver has no LOC              1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (4)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (4)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 4 ports with no output delay but user has a false path constraint (MEDIUM)
+
+leds[0]
+leds[1]
+leds[2]
+leds[3]
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.889        0.000                      0                87159        0.010        0.000                      0                86998        0.488        0.000                       0                 26267  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                                Waveform(ns)         Period(ns)      Frequency(MHz)
+-----                                ------------         ----------      --------------
+RFADC0_CLK                           {0.000 5.000}        10.000          100.000         
+RFADC1_CLK                           {0.000 5.000}        10.000          100.000         
+RFADC2_CLK                           {0.000 1.628}        3.255           307.220         
+  rf_system_i/rf_clock/inst/clk_in1  {0.000 1.628}        3.255           307.220         
+    clk_out1_rf_system_rf_clock_0_1  {0.000 3.255}        6.510           153.610         
+RFADC3_CLK                           {0.000 5.000}        10.000          100.000         
+RFDAC0_CLK                           {0.000 5.000}        10.000          100.000         
+RFDAC1_CLK                           {0.000 5.000}        10.000          100.000         
+RFDAC2_CLK                           {0.000 1.628}        3.255           307.220         
+RFDAC3_CLK                           {0.000 5.000}        10.000          100.000         
+clk_pl_0                             {0.000 5.000}        10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                                    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+RFADC2_CLK                                                                                                                                                                             1.094        0.000                       0                     2  
+  rf_system_i/rf_clock/inst/clk_in1                                                                                                                                                    0.488        0.000                       0                     1  
+    clk_out1_rf_system_rf_clock_0_1        0.889        0.000                      0                13536        0.012        0.000                      0                13536        2.605        0.000                       0                  2603  
+clk_pl_0                                   1.296        0.000                      0                73462        0.010        0.000                      0                73462        3.400        0.000                       0                 23661  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock                       To Clock                             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                       --------                             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+clk_pl_0                         clk_out1_rf_system_rf_clock_0_1       25.498        0.000                      0                   32                                                                        
+clk_out1_rf_system_rf_clock_0_1  clk_pl_0                               5.917        0.000                      0                  129                                                                        
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group                       From Clock                       To Clock                       
+----------                       ----------                       --------                       
+(none)                           clk_out1_rf_system_rf_clock_0_1                                   
+(none)                                                            clk_out1_rf_system_rf_clock_0_1  
+(none)                           clk_pl_0                         clk_out1_rf_system_rf_clock_0_1  
+(none)                                                            clk_pl_0                         
+(none)                           RFADC0_CLK                       clk_pl_0                         
+(none)                           RFADC1_CLK                       clk_pl_0                         
+(none)                           RFADC2_CLK                       clk_pl_0                         
+(none)                           RFADC3_CLK                       clk_pl_0                         
+(none)                           RFDAC0_CLK                       clk_pl_0                         
+(none)                           RFDAC1_CLK                       clk_pl_0                         
+(none)                           RFDAC2_CLK                       clk_pl_0                         
+(none)                           RFDAC3_CLK                       clk_pl_0                         
+(none)                           clk_out1_rf_system_rf_clock_0_1  clk_pl_0                         
+(none)                           clk_pl_0                         clk_pl_0                         
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)        clk_pl_0                    
+(none)                      clk_pl_0      
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  RFADC2_CLK
+  To Clock:  RFADC2_CLK
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        1.094ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         RFADC2_CLK
+Waveform(ns):       { 0.000 1.628 }
+Period(ns):         3.255
+Sources:            { rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX }
+
+Check Type        Corner  Lib Pin        Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location    Pin
+Min Period        n/a     RFADC/CLK_ADC  n/a            1.333         3.255       1.922      RFADC_X0Y2  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+Low Pulse Width   Slow    RFADC/CLK_ADC  n/a            0.533         1.628       1.095      RFADC_X0Y2  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+High Pulse Width  Slow    RFADC/CLK_ADC  n/a            0.533         1.628       1.095      RFADC_X0Y2  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  rf_system_i/rf_clock/inst/clk_in1
+  To Clock:  rf_system_i/rf_clock/inst/clk_in1
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        0.488ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         rf_system_i/rf_clock/inst/clk_in1
+Waveform(ns):       { 0.000 1.628 }
+Period(ns):         3.255
+Sources:            { rf_system_i/rf_clock/inst/clk_in1 }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location   Pin
+Min Period        n/a     MMCME4_ADV/CLKIN1  n/a            1.071         3.255       2.184      MMCM_X0Y3  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKIN1
+Max Period        n/a     MMCME4_ADV/CLKIN1  n/a            100.000       3.255       96.745     MMCM_X0Y3  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKIN1
+Low Pulse Width   Slow    MMCME4_ADV/CLKIN1  n/a            1.139         1.627       0.488      MMCM_X0Y3  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKIN1
+High Pulse Width  Slow    MMCME4_ADV/CLKIN1  n/a            1.139         1.628       0.488      MMCM_X0Y3  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_out1_rf_system_rf_clock_0_1
+  To Clock:  clk_out1_rf_system_rf_clock_0_1
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.889ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.012ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        2.605ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.889ns  (required time - arrival time)
+  Source:                 rf_system_i/modem/inst/descriptor_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            <hidden>
+                            (rising edge-triggered cell RAMB36E2 clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             clk_out1_rf_system_rf_clock_0_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.510ns  (clk_out1_rf_system_rf_clock_0_1 rise@6.510ns - clk_out1_rf_system_rf_clock_0_1 rise@0.000ns)
+  Data Path Delay:        5.233ns  (logic 0.203ns (3.880%)  route 5.030ns (96.120%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        -0.017ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.294ns = ( 10.804 - 6.510 ) 
+    Source Clock Delay      (SCD):    3.922ns
+    Clock Pessimism Removal (CPR):    -0.389ns
+  Clock Uncertainty:      0.062ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.103ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.969ns (routing 0.549ns, distribution 1.420ns)
+  Clock Net Delay (Destination): 1.899ns (routing 0.500ns, distribution 1.399ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.150     0.150 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.246     0.396    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.526 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.281     1.807    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.680 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.245     1.925    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.953 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.969     3.922    rf_system_i/modem/inst/clk
+    SLICE_X65Y57         FDRE                                         r  rf_system_i/modem/inst/descriptor_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X65Y57         FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.079     4.001 f  rf_system_i/modem/inst/descriptor_reg[2]/Q
+                         net (fo=20, routed)          0.457     4.458    rf_system_i/modem/inst/link/src_addr_2_sn_1
+    SLICE_X62Y63         LUT4 (Prop_A6LUT_SLICEL_I1_O)
+                                                      0.124     4.582 r  rf_system_i/modem/inst/link/src_addr[12]_INST_0/O
+                         net (fo=128, routed)         4.572     9.155    <hidden>
+    RAMB36_X3Y39         RAMB36E2                                     r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      6.510     6.510 r  
+    RFADC_X0Y2           RFADC                        0.000     6.510 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.122     6.632 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.150     6.782    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     6.896 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.140     8.036    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     8.666 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.215     8.881    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     8.905 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.899    10.804    <hidden>
+    RAMB36_X3Y39         RAMB36E2                                     r  <hidden>
+                         clock pessimism             -0.389    10.415    
+                         clock uncertainty           -0.062    10.353    
+    RAMB36_X3Y39         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_ADDRBWRADDR[10])
+                                                     -0.309    10.044    <hidden>
+  -------------------------------------------------------------------
+                         required time                         10.044    
+                         arrival time                          -9.155    
+  -------------------------------------------------------------------
+                         slack                                  0.889    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.012ns  (arrival time - required time)
+  Source:                 rf_system_i/modem/inst/link/number_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            rf_system_i/modem/inst/link/codec/header_out_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             clk_out1_rf_system_rf_clock_0_1
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_out1_rf_system_rf_clock_0_1 rise@0.000ns - clk_out1_rf_system_rf_clock_0_1 rise@0.000ns)
+  Data Path Delay:        0.170ns  (logic 0.080ns (47.064%)  route 0.090ns (52.936%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.098ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.934ns
+    Source Clock Delay      (SCD):    4.142ns
+    Clock Pessimism Removal (CPR):    -0.307ns
+  Clock Net Delay (Source):      1.747ns (routing 0.500ns, distribution 1.247ns)
+  Clock Net Delay (Destination): 1.981ns (routing 0.549ns, distribution 1.432ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.122     0.122 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.150     0.272    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.386 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.140     1.526    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.156 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.215     2.371    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     2.395 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.747     4.142    rf_system_i/modem/inst/link/clk
+    SLICE_X63Y65         FDRE                                         r  rf_system_i/modem/inst/link/number_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y65         FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.058     4.200 r  rf_system_i/modem/inst/link/number_reg[7]/Q
+                         net (fo=2, routed)           0.061     4.261    rf_system_i/modem/inst/link/codec/header_out_reg[23]_0[7]
+    SLICE_X61Y65         LUT5 (Prop_B6LUT_SLICEM_I0_O)
+                                                      0.022     4.283 r  rf_system_i/modem/inst/link/codec/header_out[15]_i_1/O
+                         net (fo=1, routed)           0.029     4.312    rf_system_i/modem/inst/link/codec/header_out[15]_i_1_n_0
+    SLICE_X61Y65         FDRE                                         r  rf_system_i/modem/inst/link/codec/header_out_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.150     0.150 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.246     0.396    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.526 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.281     1.807    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.680 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.245     1.925    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.953 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.981     3.934    rf_system_i/modem/inst/link/codec/clk
+    SLICE_X61Y65         FDRE                                         r  rf_system_i/modem/inst/link/codec/header_out_reg[15]/C
+                         clock pessimism              0.307     4.241    
+    SLICE_X61Y65         FDRE (Hold_BFF_SLICEM_C_D)
+                                                      0.060     4.301    rf_system_i/modem/inst/link/codec/header_out_reg[15]
+  -------------------------------------------------------------------
+                         required time                         -4.301    
+                         arrival time                           4.312    
+  -------------------------------------------------------------------
+                         slack                                  0.012    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_out1_rf_system_rf_clock_0_1
+Waveform(ns):       { 0.000 3.255 }
+Period(ns):         6.510
+Sources:            { rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin           Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location    Pin
+Min Period        n/a     RFADC/FABRIC_CLK  n/a            1.626         6.510       4.884      RFADC_X0Y2  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/FABRIC_CLK
+Low Pulse Width   Slow    RFADC/FABRIC_CLK  n/a            0.650         3.255       2.605      RFADC_X0Y2  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/FABRIC_CLK
+High Pulse Width  Slow    RFADC/FABRIC_CLK  n/a            0.650         3.255       2.605      RFADC_X0Y2  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/FABRIC_CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.296ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.400ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.296ns  (required time - arrival time)
+  Source:                 rf_system_i/ps_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            <hidden>
+                            (rising edge-triggered cell RAMB36E2 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        8.154ns  (logic 0.077ns (0.944%)  route 8.077ns (99.056%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.343ns = ( 12.343 - 10.000 ) 
+    Source Clock Delay      (SCD):    2.617ns
+    Clock Pessimism Removal (CPR):    0.174ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.391ns (routing 0.964ns, distribution 1.427ns)
+  Clock Net Delay (Destination): 2.161ns (routing 0.874ns, distribution 1.287ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.198     0.198    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.226 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.391     2.617    rf_system_i/ps_reset/U0/slowest_sync_clk
+    SLICE_X66Y109        FDRE                                         r  rf_system_i/ps_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X66Y109        FDRE (Prop_AFF_SLICEM_C_Q)
+                                                      0.077     2.694 f  rf_system_i/ps_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica/Q
+                         net (fo=322, routed)         8.077    10.771    <hidden>
+    RAMB36_X7Y1          RAMB36E2                                     r  <hidden>  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157    10.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025    10.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.161    12.343    <hidden>
+    RAMB36_X7Y1          RAMB36E2                                     r  <hidden>
+                         clock pessimism              0.174    12.517    
+                         clock uncertainty           -0.130    12.387    
+    RAMB36_X7Y1          RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_RSTRAMARSTRAM)
+                                                     -0.320    12.067    <hidden>
+  -------------------------------------------------------------------
+                         required time                         12.067    
+                         arrival time                         -10.771    
+  -------------------------------------------------------------------
+                         slack                                  1.296    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 <hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            <hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.143ns  (logic 0.061ns (42.657%)  route 0.082ns (57.343%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.071ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.864ns
+    Source Clock Delay      (SCD):    2.500ns
+    Clock Pessimism Removal (CPR):    0.293ns
+  Clock Net Delay (Source):      2.318ns (routing 0.874ns, distribution 1.444ns)
+  Clock Net Delay (Destination): 2.638ns (routing 0.964ns, distribution 1.674ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.318     2.500    <hidden>
+    SLICE_X31Y29         FDRE                                         r  <hidden>
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y29         FDRE (Prop_DFF2_SLICEM_C_Q)
+                                                      0.061     2.561 r  <hidden>
+                         net (fo=1, routed)           0.082     2.643    <hidden>
+    SLICE_X31Y27         FDRE                                         r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.198     0.198    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.226 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.638     2.864    <hidden>
+    SLICE_X31Y27         FDRE                                         r  <hidden>
+                         clock pessimism             -0.293     2.571    
+    SLICE_X31Y27         FDRE (Hold_EFF2_SLICEM_C_D)
+                                                      0.062     2.633    <hidden>
+  -------------------------------------------------------------------
+                         required time                         -2.633    
+                         arrival time                           2.643    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_pl_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { rf_system_i/ps/inst/PS8_i/PLCLK[0] }
+
+Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location    Pin
+Min Period        n/a     RFADC/DCLK  n/a            4.000         10.000      6.000      RFADC_X0Y0  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/DCLK
+Low Pulse Width   Slow    RFADC/DCLK  n/a            1.600         5.000       3.400      RFADC_X0Y0  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/DCLK
+High Pulse Width  Slow    RFADC/DCLK  n/a            1.600         5.000       3.400      RFADC_X0Y0  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/DCLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_pl_0
+  To Clock:  clk_out1_rf_system_rf_clock_0_1
+
+Setup :            0  Failing Endpoints,  Worst Slack       25.498ns,  Total Violation        0.000ns
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             25.498ns  (required time - arrival time)
+  Source:                 rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             clk_out1_rf_system_rf_clock_0_1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            26.040ns  (MaxDelay Path 26.040ns)
+  Data Path Delay:        0.567ns  (logic 0.078ns (13.757%)  route 0.489ns (86.243%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 26.040ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X56Y65                                      0.000     0.000 r  rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]/C
+    SLICE_X56Y65         FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     0.078 r  rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]/Q
+                         net (fo=1, routed)           0.489     0.567    rf_system_i/host/inst/command_cdc/src_hsdata_ff[15]
+    SLICE_X57Y71         FDRE                                         r  rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   26.040    26.040    
+    SLICE_X57Y71         FDRE (Setup_FFF2_SLICEL_C_D)
+                                                      0.025    26.065    rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]
+  -------------------------------------------------------------------
+                         required time                         26.065    
+                         arrival time                          -0.567    
+  -------------------------------------------------------------------
+                         slack                                 25.498    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_out1_rf_system_rf_clock_0_1
+  To Clock:  clk_pl_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        5.917ns,  Total Violation        0.000ns
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             5.917ns  (required time - arrival time)
+  Source:                 rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff_reg[97]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[97]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.510ns  (MaxDelay Path 6.510ns)
+  Data Path Delay:        0.618ns  (logic 0.079ns (12.783%)  route 0.539ns (87.217%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 6.510ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X56Y69                                      0.000     0.000 r  rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff_reg[97]/C
+    SLICE_X56Y69         FDRE (Prop_FFF2_SLICEM_C_Q)
+                                                      0.079     0.079 r  rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff_reg[97]/Q
+                         net (fo=1, routed)           0.539     0.618    rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff[97]
+    SLICE_X55Y68         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[97]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    6.510     6.510    
+    SLICE_X55Y68         FDRE (Setup_GFF_SLICEL_C_D)
+                                                      0.025     6.535    rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[97]
+  -------------------------------------------------------------------
+                         required time                          6.535    
+                         arrival time                          -0.618    
+  -------------------------------------------------------------------
+                         slack                                  5.917    
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_out1_rf_system_rf_clock_0_1
+  To Clock:  
+
+Max Delay             4 Endpoints
+Min Delay             4 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/host/inst/rf_control_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            leds[1]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.786ns  (logic 1.165ns (30.771%)  route 2.621ns (69.229%))
+  Logic Levels:           2  (LUT4=1 OBUF=1)
+  Clock Uncertainty:      0.141ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.102ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Source):      2.032ns (routing 0.549ns, distribution 1.483ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.150     0.150 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.246     0.396    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.526 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.281     1.807    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.680 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.245     1.925    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.953 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        2.032     3.985    rf_system_i/host/inst/rf_clk
+    SLICE_X57Y64         FDRE                                         r  rf_system_i/host/inst/rf_control_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X57Y64         FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     4.064 r  rf_system_i/host/inst/rf_control_reg[3]/Q
+                         net (fo=100, routed)         0.629     4.693    rf_system_i/modem/inst/link/control[3]
+    SLICE_X63Y69         LUT4 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.145     4.838 r  rf_system_i/modem/inst/link/leds[1]_INST_0/O
+                         net (fo=3, routed)           1.992     6.829    leds_OBUF[1]
+    AW10                 OBUF (Prop_OUTBUF_HPIOB_S_I_O)
+                                                      0.941     7.770 r  leds_OBUF[1]_inst/O
+                         net (fo=0)                   0.000     7.770    leds[1]
+    AW10                                                              r  leds[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/modem/inst/link/failed_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            leds[3]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.217ns  (logic 0.473ns (38.869%)  route 0.744ns (61.131%))
+  Logic Levels:           1  (OBUF=1)
+  Clock Uncertainty:      0.141ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.102ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Source):      1.081ns (routing 0.302ns, distribution 0.779ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.079     0.079 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.110     0.189    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.073     0.262 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           0.703     0.965    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.230     1.195 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.146     1.341    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     1.358 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.081     2.439    rf_system_i/modem/inst/link/clk
+    SLICE_X63Y67         FDRE                                         r  rf_system_i/modem/inst/link/failed_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y67         FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.039     2.478 r  rf_system_i/modem/inst/link/failed_reg/Q
+                         net (fo=3, routed)           0.744     3.221    leds_OBUF[3]
+    AU10                 OBUF (Prop_OUTBUF_HPIOB_S_I_O)
+                                                      0.434     3.655 r  leds_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     3.655    leds[3]
+    AU10                                                              r  leds[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_out1_rf_system_rf_clock_0_1
+
+Max Delay             1 Endpoint
+Min Delay             1 Endpoint
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/ps/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        1.622ns  (logic 0.099ns (6.104%)  route 1.523ns (93.896%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.141ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.102ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Destination): 1.782ns (routing 0.500ns, distribution 1.282ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  rf_system_i/ps/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=2, routed)           1.475     1.475    rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/ext_reset_in
+    SLICE_X58Y108        LUT1 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.099     1.574 r  rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1/O
+                         net (fo=1, routed)           0.048     1.622    rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/exr_d1
+    SLICE_X58Y108        FDRE                                         r  rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.122     0.122 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.150     0.272    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.386 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.140     1.526    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.156 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.215     2.371    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     2.395 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.782     4.177    rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/slowest_sync_clk
+    SLICE_X58Y108        FDRE                                         r  rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/ps/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.774ns  (logic 0.041ns (5.297%)  route 0.733ns (94.703%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.141ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.102ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Destination): 1.244ns (routing 0.334ns, distribution 0.910ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  rf_system_i/ps/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=2, routed)           0.719     0.719    rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/ext_reset_in
+    SLICE_X58Y108        LUT1 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.041     0.760 r  rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1/O
+                         net (fo=1, routed)           0.014     0.774    rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/exr_d1
+    SLICE_X58Y108        FDRE                                         r  rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.100     0.100 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.169     0.269    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.082     0.351 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           0.789     1.140    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.295     0.845 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.166     1.011    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     1.030 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.244     2.274    rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/slowest_sync_clk
+    SLICE_X58Y108        FDRE                                         r  rf_system_i/rf_reset/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_pl_0
+  To Clock:  clk_out1_rf_system_rf_clock_0_1
+
+Max Delay             4 Endpoints
+Min Delay            36 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/adc2_done_i_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_adc2_done_i/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        0.390ns  (logic 0.079ns (20.256%)  route 0.311ns (79.744%))
+  Logic Levels:           0  
+  Clock Path Skew:        1.538ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.319ns
+    Source Clock Delay      (SCD):    2.781ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.263ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.352ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Source):      2.555ns (routing 0.964ns, distribution 1.591ns)
+  Clock Net Delay (Destination): 1.924ns (routing 0.500ns, distribution 1.424ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.198     0.198    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.226 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.555     2.781    rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/s_axi_aclk
+    SLICE_X107Y158       FDRE                                         r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/adc2_done_i_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X107Y158       FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.079     2.860 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/adc2_done_i_reg/Q
+                         net (fo=1, routed)           0.311     3.171    rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_adc2_done_i/src_in
+    SLICE_X107Y158       FDRE                                         r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_adc2_done_i/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.122     0.122 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.150     0.272    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.386 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.140     1.526    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.156 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.215     2.371    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     2.395 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.924     4.319    rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_adc2_done_i/dest_clk
+    SLICE_X107Y158       FDRE                                         r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_adc2_done_i/syncstages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/host/inst/snapshot_cdc/dest_req_ff_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_dest2src_inst/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.125ns  (logic 0.038ns (30.478%)  route 0.087ns (69.522%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.806ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.227ns
+    Source Clock Delay      (SCD):    1.421ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.263ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.352ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Source):      1.301ns (routing 0.522ns, distribution 0.779ns)
+  Clock Net Delay (Destination): 1.197ns (routing 0.334ns, distribution 0.863ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.103     0.103    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.120 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.301     1.421    rf_system_i/host/inst/snapshot_cdc/dest_clk
+    SLICE_X63Y91         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/dest_req_ff_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y91         FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.038     1.459 r  rf_system_i/host/inst/snapshot_cdc/dest_req_ff_reg/Q
+                         net (fo=2, routed)           0.087     1.545    rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_dest2src_inst/src_in
+    SLICE_X63Y91         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_dest2src_inst/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.100     0.100 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.169     0.269    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.082     0.351 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           0.789     1.140    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.295     0.845 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.166     1.011    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     1.030 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.197     2.227    rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_dest2src_inst/dest_clk
+    SLICE_X63Y91         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_dest2src_inst/syncstages_ff_reg[0]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay           151 Endpoints
+Min Delay           151 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/STATUS_DAC1[15]
+                            (internal pin)
+  Destination:            rf_system_i/rfdc/inst/i_rf_system_rfdc_0_irq_sync/sync_dac31_fifo_irq/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.071ns  (logic 0.000ns (0.000%)  route 3.071ns (100.000%))
+  Logic Levels:           0  
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.280ns (routing 0.874ns, distribution 1.406ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y3           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/STATUS_DAC1[15]
+                         net (fo=1, routed)           3.071     3.071    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_irq_sync/sync_dac31_fifo_irq/src_in
+    SLICE_X104Y197       FDRE                                         r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_irq_sync/sync_dac31_fifo_irq/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.280     2.462    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_irq_sync/sync_dac31_fifo_irq/dest_clk
+    SLICE_X104Y197       FDRE                                         r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_irq_sync/sync_dac31_fifo_irq/syncstages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/STATUS_ADC2[0]
+                            (internal pin)
+  Destination:            <hidden>
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.265ns  (logic 0.000ns (0.000%)  route 0.265ns (100.000%))
+  Logic Levels:           0  
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.605ns (routing 0.582ns, distribution 1.023ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/STATUS_ADC2[0]
+                         net (fo=1, routed)           0.265     0.265    <hidden>
+    SLICE_X114Y166       FDRE                                         r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.605     1.752    <hidden>
+    SLICE_X114Y166       FDRE                                         r  <hidden>
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFADC0_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC0_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.260ns  (logic 0.911ns (27.945%)  route 2.349ns (72.055%))
+  Logic Levels:           3  (LUT6=3)
+  Clock Path Skew:        2.476ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.476ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.294ns (routing 0.874ns, distribution 1.420ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC0_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y0           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y0           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[15])
+                                                      0.520     0.520 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/STATUS_COMMON[15]
+                         net (fo=1, routed)           1.483     2.003    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc0_common_stat[15]
+    SLICE_X110Y143       LUT6 (Prop_C6LUT_SLICEM_I2_O)
+                                                      0.145     2.148 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_11/O
+                         net (fo=1, routed)           0.241     2.389    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_11_n_0
+    SLICE_X110Y150       LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.150     2.539 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_2/O
+                         net (fo=1, routed)           0.575     3.114    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_2_n_0
+    SLICE_X105Y169       LUT6 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.096     3.210 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_1/O
+                         net (fo=1, routed)           0.050     3.260    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_82
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.294     2.476    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC0_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.218ns  (logic 0.299ns (24.548%)  route 0.919ns (75.452%))
+  Logic Levels:           3  (LUT5=2 LUT6=1)
+  Clock Path Skew:        1.721ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.721ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.574ns (routing 0.582ns, distribution 0.992ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC0_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y0           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y0           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[10])
+                                                      0.211     0.211 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/STATUS_COMMON[10]
+                         net (fo=1, routed)           0.630     0.841    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc0_common_stat[10]
+    SLICE_X115Y151       LUT5 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.014     0.855 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[10]_i_9/O
+                         net (fo=1, routed)           0.048     0.903    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[10]_i_9_n_0
+    SLICE_X114Y151       LUT5 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.015     0.918 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[10]_i_2/O
+                         net (fo=1, routed)           0.215     1.133    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[10]_i_2_n_0
+    SLICE_X107Y156       LUT6 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.059     1.192 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[10]_i_1/O
+                         net (fo=1, routed)           0.026     1.218    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_87
+    SLICE_X107Y156       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.574     1.721    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X107Y156       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFADC1_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC1_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.306ns  (logic 1.172ns (35.451%)  route 2.134ns (64.549%))
+  Logic Levels:           5  (LUT6=5)
+  Clock Path Skew:        2.476ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.476ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.294ns (routing 0.874ns, distribution 1.420ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC1_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y1           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y1           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[14])
+                                                      0.543     0.543 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/STATUS_COMMON[14]
+                         net (fo=1, routed)           1.058     1.601    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc1_common_stat[14]
+    SLICE_X105Y137       LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.149     1.750 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_74/O
+                         net (fo=1, routed)           0.149     1.899    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_74_n_0
+    SLICE_X105Y138       LUT6 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.146     2.045 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_44/O
+                         net (fo=1, routed)           0.181     2.226    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_44_n_0
+    SLICE_X104Y141       LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.090     2.316 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_18/O
+                         net (fo=1, routed)           0.315     2.631    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_18_n_0
+    SLICE_X104Y154       LUT6 (Prop_F6LUT_SLICEM_I3_O)
+                                                      0.098     2.729 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_4/O
+                         net (fo=1, routed)           0.382     3.111    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_4_n_0
+    SLICE_X105Y169       LUT6 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.146     3.257 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_1/O
+                         net (fo=1, routed)           0.049     3.306    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_83
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.294     2.476    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC1_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.139ns  (logic 0.309ns (27.129%)  route 0.830ns (72.871%))
+  Logic Levels:           4  (LUT5=3 LUT6=1)
+  Clock Path Skew:        1.718ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.718ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.571ns (routing 0.582ns, distribution 0.989ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC1_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y1           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y1           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[12])
+                                                      0.210     0.210 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/STATUS_COMMON[12]
+                         net (fo=1, routed)           0.514     0.724    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc1_common_stat[12]
+    SLICE_X106Y141       LUT5 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.014     0.738 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_28/O
+                         net (fo=1, routed)           0.111     0.849    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_28_n_0
+    SLICE_X105Y142       LUT5 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.015     0.864 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_12/O
+                         net (fo=1, routed)           0.159     1.023    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_12_n_0
+    SLICE_X106Y158       LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.050     1.073 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_3/O
+                         net (fo=1, routed)           0.040     1.113    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_3_n_0
+    SLICE_X106Y158       LUT5 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.020     1.133 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_1/O
+                         net (fo=1, routed)           0.006     1.139    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_85
+    SLICE_X106Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.571     1.718    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X106Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFADC2_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC2_CLK  {rise@0.000ns fall@1.628ns period=3.255ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        2.601ns  (logic 0.972ns (37.370%)  route 1.629ns (62.630%))
+  Logic Levels:           5  (LUT3=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        2.485ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.485ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.139ns  ((TSJ^2 + TIJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.100ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.303ns (routing 0.874ns, distribution 1.429ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC2_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[8])
+                                                      0.413     0.413 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/STATUS_COMMON[8]
+                         net (fo=1, routed)           0.949     1.362    rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/adc2_common_stat[8]
+    SLICE_X106Y157       LUT3 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.157     1.519 f  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/IP2Bus_Data[8]_i_40/O
+                         net (fo=1, routed)           0.169     1.688    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_13_0
+    SLICE_X106Y157       LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.123     1.811 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_27/O
+                         net (fo=1, routed)           0.046     1.857    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_27_n_0
+    SLICE_X106Y157       LUT5 (Prop_E6LUT_SLICEL_I0_O)
+                                                      0.099     1.956 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_13/O
+                         net (fo=1, routed)           0.086     2.042    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_13_n_0
+    SLICE_X106Y157       LUT6 (Prop_F6LUT_SLICEL_I2_O)
+                                                      0.035     2.077 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_3/O
+                         net (fo=1, routed)           0.313     2.390    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_3_n_0
+    SLICE_X107Y165       LUT6 (Prop_C6LUT_SLICEM_I1_O)
+                                                      0.145     2.535 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_1/O
+                         net (fo=1, routed)           0.066     2.601    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_89
+    SLICE_X107Y165       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.303     2.485    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X107Y165       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC2_CLK  {rise@0.000ns fall@1.628ns period=3.255ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.839ns  (logic 0.293ns (34.923%)  route 0.546ns (65.077%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        1.718ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.718ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.139ns  ((TSJ^2 + TIJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.100ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.571ns (routing 0.582ns, distribution 0.989ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC2_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[12])
+                                                      0.210     0.210 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/STATUS_COMMON[12]
+                         net (fo=1, routed)           0.402     0.612    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc2_common_stat[7]
+    SLICE_X106Y154       LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.022     0.634 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_10/O
+                         net (fo=1, routed)           0.098     0.732    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_10_n_0
+    SLICE_X106Y158       LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.041     0.773 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_3/O
+                         net (fo=1, routed)           0.040     0.813    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_3_n_0
+    SLICE_X106Y158       LUT5 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.020     0.833 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_1/O
+                         net (fo=1, routed)           0.006     0.839    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_85
+    SLICE_X106Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.571     1.718    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X106Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFADC3_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC3_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        2.575ns  (logic 0.846ns (32.854%)  route 1.729ns (67.146%))
+  Logic Levels:           4  (LUT6=4)
+  Clock Path Skew:        2.476ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.476ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.294ns (routing 0.874ns, distribution 1.420ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC3_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y3           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y3           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[14])
+                                                      0.543     0.543 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/STATUS_COMMON[14]
+                         net (fo=1, routed)           1.020     1.563    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc3_common_stat[14]
+    SLICE_X103Y175       LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.152     1.715 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_34/O
+                         net (fo=1, routed)           0.210     1.925    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_34_n_0
+    SLICE_X100Y175       LUT6 (Prop_D6LUT_SLICEL_I2_O)
+                                                      0.050     1.975 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_14/O
+                         net (fo=1, routed)           0.279     2.254    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_14_n_0
+    SLICE_X104Y169       LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.051     2.305 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_3/O
+                         net (fo=1, routed)           0.171     2.476    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_3_n_0
+    SLICE_X105Y169       LUT6 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.050     2.526 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_1/O
+                         net (fo=1, routed)           0.049     2.575    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_83
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.294     2.476    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX
+                            (rising edge-triggered cell RFADC clocked by RFADC3_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.958ns  (logic 0.273ns (28.497%)  route 0.685ns (71.503%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        1.718ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.718ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.571ns (routing 0.582ns, distribution 0.989ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFADC3_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y3           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y3           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_STATUS_COMMON[12])
+                                                      0.210     0.210 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/STATUS_COMMON[12]
+                         net (fo=1, routed)           0.503     0.713    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc3_common_stat[12]
+    SLICE_X106Y168       LUT4 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.014     0.727 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_30/O
+                         net (fo=1, routed)           0.022     0.749    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_30_n_0
+    SLICE_X106Y168       LUT6 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.014     0.763 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_13/O
+                         net (fo=1, routed)           0.114     0.877    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_13_n_0
+    SLICE_X106Y158       LUT6 (Prop_H6LUT_SLICEL_I4_O)
+                                                      0.015     0.892 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_3/O
+                         net (fo=1, routed)           0.040     0.932    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_3_n_0
+    SLICE_X106Y158       LUT5 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.020     0.952 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[12]_i_1/O
+                         net (fo=1, routed)           0.006     0.958    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_85
+    SLICE_X106Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.571     1.718    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X106Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFDAC0_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC0_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.249ns  (logic 1.222ns (37.612%)  route 2.027ns (62.388%))
+  Logic Levels:           3  (LUT6=3)
+  Clock Path Skew:        2.470ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.470ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.288ns (routing 0.874ns, distribution 1.414ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC0_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y0           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y0           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[13])
+                                                      0.920     0.920 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/STATUS_COMMON[13]
+                         net (fo=1, routed)           1.482     2.402    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac0_common_stat[13]
+    SLICE_X107Y176       LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.152     2.554 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[13]_i_31/O
+                         net (fo=1, routed)           0.151     2.705    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[13]_i_31_n_0
+    SLICE_X107Y181       LUT6 (Prop_D6LUT_SLICEM_I5_O)
+                                                      0.099     2.804 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[13]_i_7/O
+                         net (fo=1, routed)           0.322     3.126    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[13]_i_7_n_0
+    SLICE_X107Y155       LUT6 (Prop_D6LUT_SLICEM_I5_O)
+                                                      0.051     3.177 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[13]_i_1/O
+                         net (fo=1, routed)           0.072     3.249    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_84
+    SLICE_X107Y155       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.288     2.470    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X107Y155       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC0_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.384ns  (logic 0.524ns (37.861%)  route 0.860ns (62.139%))
+  Logic Levels:           3  (LUT6=3)
+  Clock Path Skew:        1.732ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.732ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.585ns (routing 0.582ns, distribution 1.003ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC0_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y0           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y0           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[11])
+                                                      0.417     0.417 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/STATUS_COMMON[11]
+                         net (fo=1, routed)           0.708     1.125    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac0_common_stat[11]
+    SLICE_X107Y175       LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.035     1.160 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[11]_i_21/O
+                         net (fo=1, routed)           0.053     1.213    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[11]_i_21_n_0
+    SLICE_X107Y173       LUT6 (Prop_G6LUT_SLICEM_I2_O)
+                                                      0.050     1.263 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[11]_i_5/O
+                         net (fo=1, routed)           0.073     1.336    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[11]_i_5_n_0
+    SLICE_X107Y170       LUT6 (Prop_D6LUT_SLICEM_I3_O)
+                                                      0.022     1.358 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[11]_i_1/O
+                         net (fo=1, routed)           0.026     1.384    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_86
+    SLICE_X107Y170       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.585     1.732    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X107Y170       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFDAC1_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC1_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.981ns  (logic 1.245ns (31.274%)  route 2.736ns (68.726%))
+  Logic Levels:           4  (LUT6=4)
+  Clock Path Skew:        2.476ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.476ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.294ns (routing 0.874ns, distribution 1.420ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC1_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y1           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y1           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[15])
+                                                      0.816     0.816 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/STATUS_COMMON[15]
+                         net (fo=1, routed)           1.774     2.590    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac1_common_stat[15]
+    SLICE_X101Y185       LUT6 (Prop_G6LUT_SLICEL_I4_O)
+                                                      0.123     2.713 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_85/O
+                         net (fo=1, routed)           0.154     2.867    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_85_n_0
+    SLICE_X101Y186       LUT6 (Prop_C6LUT_SLICEL_I3_O)
+                                                      0.146     3.013 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_34/O
+                         net (fo=1, routed)           0.379     3.392    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_34_n_0
+    SLICE_X107Y186       LUT6 (Prop_G6LUT_SLICEM_I4_O)
+                                                      0.037     3.429 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_7/O
+                         net (fo=1, routed)           0.379     3.808    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_7_n_0
+    SLICE_X105Y169       LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.123     3.931 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_1/O
+                         net (fo=1, routed)           0.050     3.981    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_82
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.294     2.476    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC1_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.583ns  (logic 0.490ns (30.954%)  route 1.093ns (69.046%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        1.730ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.730ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.583ns (routing 0.582ns, distribution 1.001ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC1_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y1           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y1           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[8])
+                                                      0.403     0.403 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/STATUS_COMMON[8]
+                         net (fo=1, routed)           0.736     1.139    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac1_common_stat[8]
+    SLICE_X109Y187       LUT6 (Prop_B6LUT_SLICEM_I1_O)
+                                                      0.050     1.189 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_19/O
+                         net (fo=1, routed)           0.025     1.214    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_19_n_0
+    SLICE_X109Y187       LUT5 (Prop_A6LUT_SLICEM_I2_O)
+                                                      0.023     1.237 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_6/O
+                         net (fo=1, routed)           0.308     1.545    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_6_n_0
+    SLICE_X107Y165       LUT6 (Prop_C6LUT_SLICEM_I4_O)
+                                                      0.014     1.559 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_1/O
+                         net (fo=1, routed)           0.024     1.583    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_89
+    SLICE_X107Y165       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.583     1.730    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X107Y165       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFDAC2_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC2_CLK  {rise@0.000ns fall@1.628ns period=3.255ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        4.552ns  (logic 1.154ns (25.351%)  route 3.398ns (74.649%))
+  Logic Levels:           4  (LUT6=4)
+  Clock Path Skew:        2.476ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.476ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.294ns (routing 0.874ns, distribution 1.420ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC2_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[14])
+                                                      0.831     0.831 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/STATUS_COMMON[14]
+                         net (fo=1, routed)           2.695     3.526    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac2_common_stat[14]
+    SLICE_X105Y183       LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.124     3.650 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_63/O
+                         net (fo=1, routed)           0.135     3.785    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_63_n_0
+    SLICE_X106Y183       LUT6 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.124     3.909 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_27/O
+                         net (fo=1, routed)           0.187     4.096    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_27_n_0
+    SLICE_X107Y184       LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.039     4.135 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_7/O
+                         net (fo=1, routed)           0.332     4.467    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_7_n_0
+    SLICE_X105Y169       LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.036     4.503 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[14]_i_1/O
+                         net (fo=1, routed)           0.049     4.552    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_83
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.294     2.476    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC2_CLK  {rise@0.000ns fall@1.628ns period=3.255ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        1.823ns  (logic 0.474ns (26.001%)  route 1.349ns (73.999%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        1.730ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.730ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.583ns (routing 0.582ns, distribution 1.001ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC2_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y2           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y2           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[8])
+                                                      0.403     0.403 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/STATUS_COMMON[8]
+                         net (fo=1, routed)           1.084     1.487    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac2_common_stat[8]
+    SLICE_X107Y190       LUT6 (Prop_F6LUT_SLICEM_I2_O)
+                                                      0.035     1.522 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_21/O
+                         net (fo=1, routed)           0.046     1.568    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_21_n_0
+    SLICE_X107Y191       LUT5 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.014     1.582 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_7/O
+                         net (fo=1, routed)           0.195     1.777    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_7_n_0
+    SLICE_X107Y165       LUT6 (Prop_C6LUT_SLICEM_I5_O)
+                                                      0.022     1.799 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[8]_i_1/O
+                         net (fo=1, routed)           0.024     1.823    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_89
+    SLICE_X107Y165       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.583     1.730    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X107Y165       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  RFDAC3_CLK
+  To Clock:  clk_pl_0
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC3_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        4.804ns  (logic 1.219ns (25.375%)  route 3.585ns (74.625%))
+  Logic Levels:           5  (LUT6=5)
+  Clock Path Skew:        2.476ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.476ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.294ns (routing 0.874ns, distribution 1.420ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC3_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y3           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y3           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[15])
+                                                      0.816     0.816 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/STATUS_COMMON[15]
+                         net (fo=1, routed)           2.663     3.479    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac3_common_stat[15]
+    SLICE_X102Y183       LUT6 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     3.567 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_130/O
+                         net (fo=1, routed)           0.041     3.608    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_130_n_0
+    SLICE_X102Y183       LUT6 (Prop_B6LUT_SLICEL_I5_O)
+                                                      0.090     3.698 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_80/O
+                         net (fo=1, routed)           0.266     3.964    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_80_n_0
+    SLICE_X105Y186       LUT6 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.050     4.014 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_33/O
+                         net (fo=1, routed)           0.186     4.200    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_33_n_0
+    SLICE_X107Y186       LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.052     4.252 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_7/O
+                         net (fo=1, routed)           0.379     4.631    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_7_n_0
+    SLICE_X105Y169       LUT6 (Prop_C6LUT_SLICEL_I5_O)
+                                                      0.123     4.754 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[15]_i_1/O
+                         net (fo=1, routed)           0.050     4.804    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_82
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.294     2.476    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X105Y169       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX
+                            (rising edge-triggered cell RFDAC clocked by RFDAC3_CLK  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        2.041ns  (logic 0.528ns (25.870%)  route 1.513ns (74.130%))
+  Logic Levels:           3  (LUT5=1 LUT6=2)
+  Clock Path Skew:        1.724ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.724ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.577ns (routing 0.582ns, distribution 0.995ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock RFDAC3_CLK rise edge)
+                                                      0.000     0.000 r  
+    RFDAC_X0Y3           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y3           RFDAC (Prop_RFDAC_INTERNAL_FBRC_MUX_STATUS_COMMON[9])
+                                                      0.399     0.399 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/STATUS_COMMON[9]
+                         net (fo=1, routed)           1.323     1.722    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac3_common_stat[9]
+    SLICE_X107Y185       LUT6 (Prop_C6LUT_SLICEM_I2_O)
+                                                      0.059     1.781 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[9]_i_22/O
+                         net (fo=1, routed)           0.022     1.803    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[9]_i_22_n_0
+    SLICE_X107Y185       LUT5 (Prop_B6LUT_SLICEM_I4_O)
+                                                      0.035     1.838 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[9]_i_7/O
+                         net (fo=1, routed)           0.152     1.990    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[9]_i_7_n_0
+    SLICE_X106Y170       LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.035     2.025 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[9]_i_1/O
+                         net (fo=1, routed)           0.016     2.041    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_88
+    SLICE_X106Y170       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.577     1.724    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X106Y170       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_out1_rf_system_rf_clock_0_1
+  To Clock:  clk_pl_0
+
+Max Delay             5 Endpoints
+Min Delay           134 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rf_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            rf_system_i/rfdc/inst/cdc_dac2_clk_valid_i/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        4.292ns  (logic 0.079ns (1.840%)  route 4.213ns (98.160%))
+  Logic Levels:           0  
+  Clock Path Skew:        -1.498ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.470ns
+    Source Clock Delay      (SCD):    3.968ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.263ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.352ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Source):      2.015ns (routing 0.549ns, distribution 1.466ns)
+  Clock Net Delay (Destination): 2.288ns (routing 0.874ns, distribution 1.414ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.150     0.150 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.246     0.396    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.526 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.281     1.807    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.680 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.245     1.925    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.953 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        2.015     3.968    rf_system_i/rf_reset/U0/slowest_sync_clk
+    SLICE_X55Y79         FDRE                                         r  rf_system_i/rf_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y79         FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     4.047 r  rf_system_i/rf_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/Q
+                         net (fo=343, routed)         4.213     8.260    rf_system_i/rfdc/inst/cdc_dac2_clk_valid_i/src_in
+    SLICE_X107Y193       FDRE                                         r  rf_system_i/rfdc/inst/cdc_dac2_clk_valid_i/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.288     2.470    rf_system_i/rfdc/inst/cdc_dac2_clk_valid_i/dest_clk
+    SLICE_X107Y193       FDRE                                         r  rf_system_i/rfdc/inst/cdc_dac2_clk_valid_i/syncstages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff_reg[13]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1  {rise@0.000ns fall@3.255ns period=6.510ns})
+  Destination:            rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.101ns  (logic 0.040ns (39.604%)  route 0.061ns (60.396%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.804ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.627ns
+    Source Clock Delay      (SCD):    2.431ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.263ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.352ns
+    Phase Error              (PE):    0.084ns
+  Clock Net Delay (Source):      1.073ns (routing 0.302ns, distribution 0.771ns)
+  Clock Net Delay (Destination): 1.480ns (routing 0.582ns, distribution 0.898ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.079     0.079 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.110     0.189    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.073     0.262 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           0.703     0.965    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.230     1.195 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.146     1.341    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     1.358 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.073     2.431    rf_system_i/host/inst/snapshot_cdc/src_clk
+    SLICE_X61Y78         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y78         FDRE (Prop_BFF2_SLICEM_C_Q)
+                                                      0.040     2.471 r  rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff_reg[13]/Q
+                         net (fo=1, routed)           0.061     2.532    rf_system_i/host/inst/snapshot_cdc/src_hsdata_ff[13]
+    SLICE_X62Y78         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.480     1.627    rf_system_i/host/inst/snapshot_cdc/dest_clk
+    SLICE_X62Y78         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[13]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Max Delay           262 Endpoints
+Min Delay           262 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/ps_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.055ns  (logic 0.116ns (3.798%)  route 2.939ns (96.202%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        -0.238ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.379ns
+    Source Clock Delay      (SCD):    2.617ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.391ns (routing 0.964ns, distribution 1.427ns)
+  Clock Net Delay (Destination): 2.197ns (routing 0.874ns, distribution 1.323ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.198     0.198    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.226 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.391     2.617    rf_system_i/ps_reset/U0/slowest_sync_clk
+    SLICE_X66Y109        FDRE                                         r  rf_system_i/ps_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X66Y109        FDRE (Prop_AFF_SLICEM_C_Q)
+                                                      0.077     2.694 f  rf_system_i/ps_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_replica/Q
+                         net (fo=322, routed)         2.765     5.459    rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/peripheral_aresetn[0]_bufg_place_replica
+    SLICE_X56Y108        LUT1 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.039     5.498 r  rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1/O
+                         net (fo=1, routed)           0.174     5.672    rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/asr_d1
+    SLICE_X56Y108        FDRE                                         r  rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.197     2.379    rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/aclk
+    SLICE_X56Y108        FDRE                                         r  rf_system_i/axi/inst/clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[61]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/telemetry/U0/gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[29].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.072ns  (logic 0.039ns (54.167%)  route 0.033ns (45.833%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.191ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.608ns
+    Source Clock Delay      (SCD):    1.417ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.297ns (routing 0.522ns, distribution 0.775ns)
+  Clock Net Delay (Destination): 1.461ns (routing 0.582ns, distribution 0.879ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.103     0.103    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.120 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.297     1.417    rf_system_i/host/inst/snapshot_cdc/dest_clk
+    SLICE_X64Y88         FDRE                                         r  rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[61]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X64Y88         FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.039     1.456 r  rf_system_i/host/inst/snapshot_cdc/dest_hsdata_ff_reg[61]/Q
+                         net (fo=1, routed)           0.033     1.489    rf_system_i/telemetry/U0/gpio_core_1/Dual.INPUT_DOUBLE_REGS4/gpio_io_i[29]
+    SLICE_X64Y88         FDRE                                         r  rf_system_i/telemetry/U0/gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[29].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.461     1.608    rf_system_i/telemetry/U0/gpio_core_1/Dual.INPUT_DOUBLE_REGS4/s_axi_aclk
+    SLICE_X64Y88         FDRE                                         r  rf_system_i/telemetry/U0/gpio_core_1/Dual.INPUT_DOUBLE_REGS4/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[29].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_pl_0
+  To Clock:  
+
+Max Delay             8 Endpoints
+Min Delay             8 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                            (clock source 'clk_pl_0'  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/PLL_MONCLK
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        2.974ns  (logic 0.028ns (0.941%)  route 2.946ns (99.059%))
+  Logic Levels:           1  (BUFG_PS=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 fall edge)
+                                                      5.000     5.000 f  
+    PS8_X0Y0             PS8                          0.000     5.000 f  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.198     5.198    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     5.226 f  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=23661, routed)       2.748     7.974    rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/s_axi_aclk
+    RFDAC_X0Y3           RFDAC                                        f  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/PLL_MONCLK
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                            (clock source 'clk_pl_0'  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/PLL_MONCLK
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.546ns  (logic 0.017ns (1.100%)  route 1.529ns (98.900%))
+  Logic Levels:           1  (BUFG_PS=1)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.103     0.103    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.017     0.120 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+                         net (fo=23661, routed)       1.426     1.546    rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/s_axi_aclk
+    RFADC_X0Y3           RFADC                                        r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/PLL_MONCLK
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay            15 Endpoints
+Min Delay            15 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/STATUS_COMMON[22]
+                            (internal pin)
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        3.905ns  (logic 0.428ns (10.959%)  route 3.477ns (89.041%))
+  Logic Levels:           5  (LUT5=1 LUT6=4)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.274ns (routing 0.874ns, distribution 1.400ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RFDAC_X0Y3           RFDAC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/STATUS_COMMON[22]
+                         net (fo=2, routed)           2.797     2.797    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/dac3_common_stat[22]
+    SLICE_X104Y185       LUT5 (Prop_B6LUT_SLICEM_I2_O)
+                                                      0.149     2.946 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_123/O
+                         net (fo=1, routed)           0.091     3.037    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_123_n_0
+    SLICE_X104Y185       LUT6 (Prop_C6LUT_SLICEM_I2_O)
+                                                      0.098     3.135 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_78/O
+                         net (fo=1, routed)           0.096     3.231    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_78_n_0
+    SLICE_X104Y186       LUT6 (Prop_H6LUT_SLICEM_I3_O)
+                                                      0.039     3.270 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_28/O
+                         net (fo=1, routed)           0.040     3.310    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_28_n_0
+    SLICE_X104Y186       LUT6 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.052     3.362 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_7/O
+                         net (fo=1, routed)           0.395     3.757    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_7_n_0
+    SLICE_X104Y158       LUT6 (Prop_H6LUT_SLICEM_I5_O)
+                                                      0.090     3.847 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[0]_i_1/O
+                         net (fo=1, routed)           0.058     3.905    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_97
+    SLICE_X104Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.274     2.456    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X104Y158       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/STATUS_COMMON[17]
+                            (internal pin)
+  Destination:            rf_system_i/rfdc/inst/IP2Bus_Data_reg[17]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.571ns  (logic 0.064ns (11.208%)  route 0.507ns (88.792%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Uncertainty:      0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.250ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.556ns (routing 0.582ns, distribution 0.974ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/STATUS_COMMON[17]
+                         net (fo=1, routed)           0.364     0.364    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/adc2_common_stat[12]
+    SLICE_X106Y151       LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.014     0.378 f  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[17]_i_7/O
+                         net (fo=1, routed)           0.127     0.505    rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[17]_i_7_n_0
+    SLICE_X102Y151       LUT6 (Prop_D6LUT_SLICEL_I5_O)
+                                                      0.050     0.555 r  rf_system_i/rfdc/inst/i_axi_lite_ipif/I_SLAVE_ATTACHMENT/I_DECODER/IP2Bus_Data[17]_i_1/O
+                         net (fo=1, routed)           0.016     0.571    rf_system_i/rfdc/inst/i_axi_lite_ipif_n_80
+    SLICE_X102Y151       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.018     0.147 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       1.556     1.703    rf_system_i/rfdc/inst/s_axi_aclk
+    SLICE_X102Y151       FDRE                                         r  rf_system_i/rfdc/inst/IP2Bus_Data_reg[17]/C
+
+
+
+
+

@@ -1,0 +1,168 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date              : Wed Nov 25 16:52:03 2026
+| Host              : LAPTOP-U9RNVGB3 running 64-bit major release  (build 9200)
+| Command           : report_cdc -details -return_string
+| Design            : rf_system_wrapper
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+ID      Severity  Count  Description
+------  --------  -----  ----------------------------------------------
+CDC-3   Info          8  1-bit synchronized with ASYNC_REG property
+CDC-15  Warning      65  Clock enable controlled CDC structure detected
+
+ID      Waived Endpoints  
+------  ----------------  
+CDC-11                 2  
+
+Source Clock: clk_pl_0
+Destination Clock: clk_out1_rf_system_rf_clock_0_1
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                 Depth  Exception   Source (From)                                                          Destination (To)
+---  -----  --------  ------------------------------------------  -----  ----------  ---------------------------------------------------------------------  ------------------------------------------------------------------------------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      4  False Path  rf_system_i/host/inst/command_cdc/src_sendd_ff_reg/C                   rf_system_i/host/inst/command_cdc/xpm_cdc_single_src2dest_inst/syncstages_ff_reg[0]/D
+  2  CDC-3  Info      1-bit synchronized with ASYNC_REG property      4  False Path  rf_system_i/host/inst/snapshot_cdc/dest_req_ff_reg/C                   rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_dest2src_inst/syncstages_ff_reg[0]/D
+  3  CDC-3  Info      1-bit synchronized with ASYNC_REG property      4  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/adc2_done_i_reg/C  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_adc2_done_i/syncstages_ff_reg[0]/D
+  4  CDC-3  Info      1-bit synchronized with ASYNC_REG property      4  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/dac2_done_i_reg/C  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/cdc_dac2_done_i/syncstages_ff_reg[0]/D
+
+Source Clock: RFADC0_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ------------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx0_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFADC1_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ------------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx1_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFADC2_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ------------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFADC3_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                         Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ------------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx3_u_adc/INTERNAL_FBRC_DIV1_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC0_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  -------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx0_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC1_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  -------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx1_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC2_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  -------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx2_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: RFDAC3_CLK
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                                    Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  -------------------------------------------------------------------------------  -------------------------------------------
+  1  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[8]/D
+  2  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[9]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[10]/D
+  4  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[11]/D
+  5  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[12]/D
+  6  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[13]/D
+  7  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[14]/D
+  8  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/tx3_u_dac/INTERNAL_FBRC_MUX  rf_system_i/rfdc/inst/IP2Bus_Data_reg[15]/D
+
+Source Clock: clk_out1_rf_system_rf_clock_0_1
+Destination Clock: clk_pl_0
+CDC Type: No Common Primary Clock
+
+Row  ID      Severity  Description                                     Depth  Exception   Source (From)                                                             Destination (To)
+---  ------  --------  ----------------------------------------------  -----  ----------  ------------------------------------------------------------------------  --------------------------------------------------------------------------------------
+  1  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  False Path  rf_system_i/host/inst/command_cdc/dest_req_ff_reg/C                       rf_system_i/host/inst/command_cdc/xpm_cdc_single_dest2src_inst/syncstages_ff_reg[0]/D
+  2  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  False Path  rf_system_i/host/inst/snapshot_cdc/src_sendd_ff_reg/C                     rf_system_i/host/inst/snapshot_cdc/xpm_cdc_single_src2dest_inst/syncstages_ff_reg[0]/D
+  3  CDC-15  Warning   Clock enable controlled CDC structure detected      0  False Path  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/FABRIC_CLK  rf_system_i/rfdc/inst/IP2Bus_Data_reg[5]/D
+  4  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  False Path  rf_system_i/rf_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C             rf_system_i/rfdc/inst/cdc_adc2_clk_valid_i/syncstages_ff_reg[0]/D
+  5  CDC-3   Info      1-bit synchronized with ASYNC_REG property          4  False Path  rf_system_i/rf_reset/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N/C             rf_system_i/rfdc/inst/cdc_dac2_clk_valid_i/syncstages_ff_reg[0]/D
+
+

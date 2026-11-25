@@ -1,0 +1,275 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date              : Wed Nov 25 16:52:02 2026
+| Host              : LAPTOP-U9RNVGB3 running 64-bit major release  (build 9200)
+| Command           : report_bus_skew -warn_on_violation -return_string
+| Design            : rf_system_wrapper
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Routed
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+Table of Contents
+-----------------
+1. Bus Skew Report Summary
+2. Bus Skew Report Per Constraint
+
+1. Bus Skew Report Summary
+--------------------------
+
+Id  Position  From                            To                              Corner  Requirement(ns)  Actual(ns)  Slack(ns)
+--  --------  ------------------------------  ------------------------------  ------  ---------------  ----------  ---------
+1   117       [get_cells [list {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[0]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[10]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[11]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[12]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[13]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[14]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[16]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[17]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[18]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[19]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[1]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[20]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[21]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[22]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[23]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[24]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[25]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[26]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[27]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[28]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[29]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[2]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[30]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[31]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[3]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[4]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[5]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[6]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[7]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[8]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[9]}]]
+                                              [get_cells [list {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[0]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[10]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[11]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[12]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[13]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[14]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[16]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[17]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[18]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[19]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[1]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[20]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[21]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[22]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[23]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[24]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[25]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[26]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[27]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[28]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[29]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[2]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[30]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[31]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[3]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[5]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[6]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[7]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[8]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[9]}]]
+                                                                              Slow             26.040       0.626     25.414
+
+
+2. Bus Skew Report Per Constraint
+---------------------------------
+
+Id: 1
+set_bus_skew -from [get_cells [list {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[0]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[10]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[11]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[12]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[13]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[14]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[16]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[17]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[18]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[19]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[1]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[20]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[21]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[22]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[23]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[24]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[25]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[26]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[27]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[28]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[29]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[2]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[30]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[31]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[3]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[4]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[5]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[6]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[7]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[8]} \
+          {rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[9]}]] -to [get_cells [list {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[0]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[10]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[11]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[12]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[13]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[14]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[16]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[17]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[18]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[19]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[1]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[20]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[21]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[22]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[23]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[24]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[25]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[26]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[27]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[28]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[29]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[2]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[30]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[31]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[3]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[5]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[6]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[7]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[8]} \
+          {rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[9]}]] 26.040
+Requirement: 26.040ns
+Endpoints: 32
+
+From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
+--------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
+clk_pl_0              clk_out1_rf_system_rf_clock_0_1
+                                            rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]/D
+                                                                            rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]/D
+                                                                                                            Slow         0.626     25.414
+
+
+Slack (MET) :             25.414ns  (requirement - actual skew)
+  Endpoint Source:        rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0)
+  Endpoint Destination:   rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1)
+  Reference Source:       rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0)
+  Reference Destination:  rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_rf_system_rf_clock_0_1)
+  Path Type:              Bus Skew (Max at Slow Process Corner)
+  Requirement:            26.040ns
+  Endpoint Relative Delay:   -0.938ns
+  Reference Relative Delay:  -1.494ns
+  Relative CRPR:             -0.070ns
+  Actual Bus Skew:            0.626ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+
+Endpoint path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.198     0.198    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.028     0.226 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.494     2.720    rf_system_i/host/inst/command_cdc/src_clk
+    SLICE_X56Y65         FDRE                                         r  rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X56Y65         FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.078     2.798 r  rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[15]/Q
+                         net (fo=1, routed)           0.489     3.287    rf_system_i/host/inst/command_cdc/src_hsdata_ff[15]
+    SLICE_X57Y71         FDRE                                         r  rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.122     0.122 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.150     0.272    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.386 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.140     1.526    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     2.156 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.215     2.371    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     2.395 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        1.805     4.200    rf_system_i/host/inst/command_cdc/dest_clk
+    SLICE_X57Y71         FDRE                                         r  rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]/C
+                         clock pessimism              0.000     4.200    
+    SLICE_X57Y71         FDRE (Setup_FFF2_SLICEL_C_D)
+                                                      0.025     4.225    rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[15]
+  -------------------------------------------------------------------
+                         data arrival                           3.287    
+                         clock arrival                          4.225    
+  -------------------------------------------------------------------
+                         relative delay                        -0.938    
+
+Reference path:
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  rf_system_i/ps/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.157     0.157    rf_system_i/ps/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y69        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.025     0.182 r  rf_system_i/ps/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X3Y3 (CLOCK_ROOT)    net (fo=23661, routed)       2.207     2.389    rf_system_i/host/inst/command_cdc/src_clk
+    SLICE_X53Y68         FDRE                                         r  rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y68         FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.058     2.447 r  rf_system_i/host/inst/command_cdc/src_hsdata_ff_reg[4]/Q
+                         net (fo=1, routed)           0.098     2.545    rf_system_i/host/inst/command_cdc/src_hsdata_ff[4]
+    SLICE_X53Y68         FDRE                                         r  rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_rf_system_rf_clock_0_1 rise edge)
+                                                      0.000     0.000 r  
+    RFADC_X0Y2           RFADC                        0.000     0.000 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/INTERNAL_FBRC_DIV1_MUX
+    RFADC_X0Y2           RFADC (Prop_RFADC_INTERNAL_FBRC_DIV1_MUX_CLK_ADC)
+                                                      0.150     0.150 r  rf_system_i/rfdc/inst/rf_system_rfdc_0_rf_wrapper_i/rx2_u_adc/CLK_ADC
+                         net (fo=2, routed)           0.246     0.396    rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt_0
+    BUFG_GT_X1Y64        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.526 r  rf_system_i/rfdc/inst/i_rf_system_rfdc_0_bufg_gt_ctrl/adc2_bufg_gt/O
+                         net (fo=1, routed)           1.281     1.807    rf_system_i/rf_clock/inst/clk_in1
+    MMCM_X0Y3            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.680 r  rf_system_i/rf_clock/inst/mmcme4_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.245     1.925    rf_system_i/rf_clock/inst/clk_out1_rf_system_rf_clock_0
+    BUFGCE_X0Y81         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.953 r  rf_system_i/rf_clock/inst/clkout1_buf/O
+    X3Y3 (CLOCK_ROOT)    net (fo=2725, routed)        2.026     3.979    rf_system_i/host/inst/command_cdc/dest_clk
+    SLICE_X53Y68         FDRE                                         r  rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]/C
+                         clock pessimism              0.000     3.979    
+    SLICE_X53Y68         FDRE (Hold_CFF_SLICEM_C_D)
+                                                      0.060     4.039    rf_system_i/host/inst/command_cdc/dest_hsdata_ff_reg[4]
+  -------------------------------------------------------------------
+                         data arrival                           2.545    
+                         clock arrival                          4.039    
+  -------------------------------------------------------------------
+                         relative delay                        -1.494    
+
+
+
+
