@@ -1,0 +1,16 @@
+{
+  "model": "models/ssd_mobilenet_v1_int8.tflite",
+  "labels": "labels/labels.txt",
+  "contract_confirmed": false,
+  "input_real_scale": null,
+  "input_real_bias": null,
+  "outputs": {
+    "boxes": null,
+    "classes": null,
+    "scores": null,
+    "count": null
+  },
+  "label_offset": 0,
+  "threshold": 0.5,
+  "num_threads": 2
+}

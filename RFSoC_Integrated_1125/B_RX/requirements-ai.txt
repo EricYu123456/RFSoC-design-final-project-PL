@@ -1,0 +1,5 @@
+# Candidate ranges; NOT a board lockfile. Prefer the known-good board versions.
+numpy>=1.19,<2
+Pillow>=8,<11
+# tflite-runtime: supply exact CPython/architecture/glibc-compatible known-good wheel.
+# OpenCV: reuse board cv2; optional only for MP4 replay, not worker core.

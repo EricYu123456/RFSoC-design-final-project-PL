@@ -1,0 +1,227 @@
+{
+ "package": "RFSoC_Integrated_1125",
+ "date": "2026-11-26",
+ "sources": [
+  "github:EricYu123456/RFSoC-design-final-project-PL/OFDM_two_board_4subcarriers_16QAM_webcam",
+  "RFSoC_MethodB_TX_RX_split.zip",
+  "1125_RFSoC_AI.zip"
+ ],
+ "missing_external": [
+  "B_RX/transport/protocol.py",
+  "B_RX/models/ssd_mobilenet_v1_int8.tflite",
+  "B_RX/labels/labels.txt",
+  "B_RX/config/detector.json"
+ ],
+ "files": [
+  {
+   "path": ".gitignore",
+   "bytes": 70,
+   "sha256": "47bcc509ce6c668a542e2ba492ec851c654ce881eec625989855fcc9f363313d"
+  },
+  {
+   "path": "A_TX/RFSoC4x2_OFDM_MethodB_TX.ipynb",
+   "bytes": 6959,
+   "sha256": "0274ad9a38aff00b410cc636d9454bc1c6f35d7a40b679c994027370d3c7db0c"
+  },
+  {
+   "path": "A_TX/manifest.json",
+   "bytes": 1419,
+   "sha256": "f3fffcdb25b72c8f82384655256f23d558467b6625e7afdc58999216e812d261"
+  },
+  {
+   "path": "A_TX/ofdm_qam16.bit",
+   "bytes": 13369021,
+   "sha256": "09a45eb67c7fb17d60a9c641ef90fc8438706918e5d4f2a38311c5aad726d08e"
+  },
+  {
+   "path": "A_TX/ofdm_qam16.hwh",
+   "bytes": 540258,
+   "sha256": "93257cc9e6ab635b9f4a2aca5af1d21a47cdbd484259f7fc4fb9bbf0ecd59ee1"
+  },
+  {
+   "path": "A_TX/webcam_benchmark.py",
+   "bytes": 6647,
+   "sha256": "8b85300b2f182ed81f7c3084e4a959346883e8f943ca085ffa39140ec3180eb3"
+  },
+  {
+   "path": "A_TX/webcam_board.py",
+   "bytes": 21045,
+   "sha256": "593df67b6e901ed9ca33a8589d6f3843c34047d34ec43762a8fc9d6ffa3d9921"
+  },
+  {
+   "path": "A_TX/webcam_latency.py",
+   "bytes": 5737,
+   "sha256": "8e4405b60ad524384dcb6d59ba2e900b94dfcf8826657100f3fb6e357c28dec8"
+  },
+  {
+   "path": "A_TX/webcam_live.py",
+   "bytes": 15934,
+   "sha256": "efcc783bb22d79a4cb55f88d5b8b1ad9205ce7b8b6db72ccf7edf129e94d07a2"
+  },
+  {
+   "path": "A_TX/webcam_native.c",
+   "bytes": 2695,
+   "sha256": "79cfc1289c2d639101aa606141002e6000eb095dd86261fac10b92be74e5f569"
+  },
+  {
+   "path": "A_TX/webcam_native.py",
+   "bytes": 3009,
+   "sha256": "46503c20aac41a0957c4f56e80afa2960390861454d814ea77ec4c078ff3cb1d"
+  },
+  {
+   "path": "A_TX/webcam_stream.py",
+   "bytes": 11117,
+   "sha256": "afe5e589a3255f36dea3b11731ff743d5695b3875c54fd253ddc76450c280074"
+  },
+  {
+   "path": "B_RX/RFSoC4x2_OFDM_MethodB_RX_TCP_AI.ipynb",
+   "bytes": 26953,
+   "sha256": "594c67b55d5d2a5f6f1c54e809867d067c87968db4a7463f05387028ea6f1f49"
+  },
+  {
+   "path": "B_RX/ai/__init__.py",
+   "bytes": 59,
+   "sha256": "0c82c44c54b8c06197458564a13e898ba5d6c48c374cbed66c3d6d3a0f0ea5e8"
+  },
+  {
+   "path": "B_RX/ai/ai_inference_rfsoc.py",
+   "bytes": 6717,
+   "sha256": "470a2bb6fbe3a3991d9de25804ec5cce508d06e182db4829455f9e5a10bd8a51"
+  },
+  {
+   "path": "B_RX/ai/ai_worker.py",
+   "bytes": 7558,
+   "sha256": "5e4bd0002341e56bf0d4e51e3f5ec62e1d62dff95fab5e05ee682657a8d75d54"
+  },
+  {
+   "path": "B_RX/ai/replay.py",
+   "bytes": 2099,
+   "sha256": "29e055322b1ffd7f12b8eccbfc2616b460bc38337b586a9b89619a0208793a16"
+  },
+  {
+   "path": "B_RX/config/detector.example.json",
+   "bytes": 331,
+   "sha256": "b8c824fa5efff4d7bb9d9d2086cb305418eee862ea9bc3d239e1c78aacbf1ecf"
+  },
+  {
+   "path": "B_RX/docs/MODEL.md",
+   "bytes": 2857,
+   "sha256": "3e4c973344f8b79762812bfbabdc9f345739928949e9b64b36938f6c0f925533"
+  },
+  {
+   "path": "B_RX/labels/README.md",
+   "bytes": 143,
+   "sha256": "cf94fa6447d747fdd66cb1330fc6a6ced5628b18fc15b73d3468f77a1b9d0814"
+  },
+  {
+   "path": "B_RX/manifest.json",
+   "bytes": 1419,
+   "sha256": "f3fffcdb25b72c8f82384655256f23d558467b6625e7afdc58999216e812d261"
+  },
+  {
+   "path": "B_RX/models/README.md",
+   "bytes": 181,
+   "sha256": "95fa91ccf24f8c3ab8bf1d634b8e1d3975c4a365a29d959134de72a1b4726b6b"
+  },
+  {
+   "path": "B_RX/ofdm_qam16.bit",
+   "bytes": 13369021,
+   "sha256": "09a45eb67c7fb17d60a9c641ef90fc8438706918e5d4f2a38311c5aad726d08e"
+  },
+  {
+   "path": "B_RX/ofdm_qam16.hwh",
+   "bytes": 540258,
+   "sha256": "93257cc9e6ab635b9f4a2aca5af1d21a47cdbd484259f7fc4fb9bbf0ecd59ee1"
+  },
+  {
+   "path": "B_RX/requirements-ai.txt",
+   "bytes": 270,
+   "sha256": "64a690ffa131c20ff654b3db395fc3c616464e94d43e956078fa66123a0a7ecf"
+  },
+  {
+   "path": "B_RX/tests/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "B_RX/tests/test_ai_worker.py",
+   "bytes": 6398,
+   "sha256": "a1f86fd61df4aeabccfc551f73d05bbf9219169fa4fccb21526e94bfeb01595e"
+  },
+  {
+   "path": "B_RX/tests/test_bram_bringup.py",
+   "bytes": 2205,
+   "sha256": "b149a4c414892121989af43802982d2dce3800c81f52221ff75dad7d37ac693f"
+  },
+  {
+   "path": "B_RX/tools/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "B_RX/tools/infer_image.py",
+   "bytes": 380,
+   "sha256": "a84134b47cf444a38c7c0e09cf472ad38fb6d20e4d38dd18ebae8d02c7cfd2a4"
+  },
+  {
+   "path": "B_RX/tools/inspect_model.py",
+   "bytes": 403,
+   "sha256": "8eb548c387b2f492ec2518ec638424c2dbc6fc14f23b0b31b909f11bb9b06295"
+  },
+  {
+   "path": "B_RX/tools/mock_smoke.py",
+   "bytes": 583,
+   "sha256": "4942e812b1ef44f0c2f5e60a1f3919d85dc1135056f00aad71ae2680f9f5e22c"
+  },
+  {
+   "path": "B_RX/tools/summarize_results.py",
+   "bytes": 1345,
+   "sha256": "d987524e9670449d0f94baa3a1a95e6f74c7408623155d89ac09fb499e1d27d5"
+  },
+  {
+   "path": "B_RX/transport/README.md",
+   "bytes": 204,
+   "sha256": "280e782ee103cbe79148cde4e13c93f8d9df01a5c857578c4986d4d2ae0e1cd5"
+  },
+  {
+   "path": "B_RX/webcam_benchmark.py",
+   "bytes": 6647,
+   "sha256": "8b85300b2f182ed81f7c3084e4a959346883e8f943ca085ffa39140ec3180eb3"
+  },
+  {
+   "path": "B_RX/webcam_board.py",
+   "bytes": 21045,
+   "sha256": "593df67b6e901ed9ca33a8589d6f3843c34047d34ec43762a8fc9d6ffa3d9921"
+  },
+  {
+   "path": "B_RX/webcam_latency.py",
+   "bytes": 5737,
+   "sha256": "8e4405b60ad524384dcb6d59ba2e900b94dfcf8826657100f3fb6e357c28dec8"
+  },
+  {
+   "path": "B_RX/webcam_live.py",
+   "bytes": 15934,
+   "sha256": "efcc783bb22d79a4cb55f88d5b8b1ad9205ce7b8b6db72ccf7edf129e94d07a2"
+  },
+  {
+   "path": "B_RX/webcam_native.c",
+   "bytes": 2695,
+   "sha256": "79cfc1289c2d639101aa606141002e6000eb095dd86261fac10b92be74e5f569"
+  },
+  {
+   "path": "B_RX/webcam_native.py",
+   "bytes": 3009,
+   "sha256": "46503c20aac41a0957c4f56e80afa2960390861454d814ea77ec4c078ff3cb1d"
+  },
+  {
+   "path": "B_RX/webcam_stream.py",
+   "bytes": 11117,
+   "sha256": "afe5e589a3255f36dea3b11731ff743d5695b3875c54fd253ddc76450c280074"
+  },
+  {
+   "path": "README_整合說明.md",
+   "bytes": 7537,
+   "sha256": "b082c534b2c7af866de57a6b72103c040d96fbd5025f0756ea5b452b0ca20e1b"
+  }
+ ]
+}

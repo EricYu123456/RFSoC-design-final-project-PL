@@ -1,0 +1,34 @@
+{
+  "board": "RFSoC4x2",
+  "part": "xczu48dr-ffvg1517-2-e",
+  "vivado": "2024.2",
+  "phy": "ofdm",
+  "host_interface": "ofdm_qam16_v1",
+  "modem_status_id": 66,
+  "fft_size": 8,
+  "active_bins": [
+    1,
+    2,
+    -2,
+    -1
+  ],
+  "cyclic_prefix_samples": 4,
+  "data_modulation": "16-QAM",
+  "ack_modulation": "16-QAM",
+  "carrier_mhz": 500,
+  "baseband_msps": 19.2,
+  "frame_bytes": 307200,
+  "physical_board_tested": false,
+  "files": {
+    "ofdm_qam16.bit": "09a45eb67c7fb17d60a9c641ef90fc8438706918e5d4f2a38311c5aad726d08e",
+    "ofdm_qam16.hwh": "93257cc9e6ab635b9f4a2aca5af1d21a47cdbd484259f7fc4fb9bbf0ecd59ee1",
+    "RFSoC4x2_OFDM_Live_Webcam_MethodB.ipynb": "d362fe9d39c84b59872a9846a3be5d77c429d832251aabc5d8daccfc5679f471",
+    "webcam_board.py": "5f9ab3c8d9eb56572eb76295fa41980afb544df79f89fd4cd58a4bc426f9c3c9",
+    "webcam_live.py": "1a1a536dae29ac9088c7851717746d1344aad374b914b742d57abfaeafbfb7c6",
+    "webcam_stream.py": "81f209189e7a1b82176cc94db5e2497720fbc00444c468f91c2bd719ab403f8e",
+    "webcam_latency.py": "8e4405b60ad524384dcb6d59ba2e900b94dfcf8826657100f3fb6e357c28dec8",
+    "webcam_benchmark.py": "5a3ab5cbe2771cd45d982f62066d92742cc0dbd53e6623d02637c4b50998610c",
+    "webcam_native.py": "46503c20aac41a0957c4f56e80afa2960390861454d814ea77ec4c078ff3cb1d",
+    "webcam_native.c": "79cfc1289c2d639101aa606141002e6000eb095dd86261fac10b92be74e5f569"
+  }
+}

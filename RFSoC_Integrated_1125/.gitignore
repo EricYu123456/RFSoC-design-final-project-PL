@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+received_live_webcam/
+results/
